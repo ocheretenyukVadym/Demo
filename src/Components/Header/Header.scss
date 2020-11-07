@@ -2,13 +2,13 @@
     width:60%;
     height: auto;
     margin: 20px auto;
-    padding: 10px 20px;
+    padding: 20px;
     background: rgba(22, 123, 255,1);
     border-radius: 10px;
 
     .navbar-light{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
 
         .navbar-nav{
             display: flex;
@@ -23,7 +23,6 @@
 
                 .header-ico{
                     width: 10%;
-                    margin-right: 10%;
                 }
             }
             

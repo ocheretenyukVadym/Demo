@@ -2,6 +2,7 @@ import { inject, observer } from 'mobx-react';
 import React from 'react';
 import NewTicketPage from './NewTicketPage/NewTicketPage';
 import './TicketPageContainer.scss';
+import Tickets from './Tickets/Tickets';
 
 class TicketPageContainer extends React.Component{
     constructor(){
@@ -17,12 +18,10 @@ class TicketPageContainer extends React.Component{
         console.log(this.props.users);
         return(
             <div>
-                {this.state.isAddNewTicket && <NewTicketPage 
-                    newTicketValue={this.props.store.newTicketValue} 
-                    setTicketValue={this.props.store.setTicketValue}
-                    createNewTicket={this.props.store.createNewTicket} 
+                {this.props.isAddNewTicket && <NewTicketPage 
+                    createNewTicket={this.props.store.createNewTicket}
                 />}
-                
+                <Tickets tickets = {this.props.store.tickets}/>
                 
             </div>
         )
