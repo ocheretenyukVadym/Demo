@@ -1,14 +1,26 @@
+import { inject, observer } from 'mobx-react';
 import React from 'react';
+import NewTicketPage from './NewTicketPage/NewTicketPage';
 import './TicketPageContainer.scss';
 
-class TicketPageContainer extends React.Component{
+class TicketPage extends React.Component{
     render(){
+        console.log(this.props.users);
         return(
             <div>
-                <h1>Tickets Page</h1>
+                <NewTicketPage 
+                    newTicketValue={this.props.newTicketValue} 
+                    setTicketValue={this.props.setTicketValue} 
+                />
             </div>
         )
     }
 }
 
-export default TicketPageContainer;
+const TicketPageContainer = inject(stores => ({
+    tickets: stores.tickets,
+    newTicketValue: stores.newTicketValue,
+    setTicketValue: stores.setTicketValue
+}))(TicketPage)
+
+export default observer(TicketPageContainer);
