@@ -4,7 +4,7 @@ class RecycleBinContainer extends React.Component{
     render(){
         return(
             <div>
-
+                <button>Recycle Bin</button>
             </div>
         )
     }
