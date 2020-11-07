@@ -3,24 +3,24 @@ import React from 'react';
 import NewTicketPage from './NewTicketPage/NewTicketPage';
 import './TicketPageContainer.scss';
 
-class TicketPage extends React.Component{
+class TicketPageContainer extends React.Component{
+
+    componentDidMount(){
+        this.props.store.getTickets();
+    }
+
     render(){
         console.log(this.props.users);
         return(
             <div>
                 <NewTicketPage 
-                    newTicketValue={this.props.newTicketValue} 
-                    setTicketValue={this.props.setTicketValue} 
+                    newTicketValue={this.props.store.newTicketValue} 
+                    setTicketValue={this.props.store.setTicketValue}
+                    createNewTicket={this.props.store.createNewTicket} 
                 />
             </div>
         )
     }
 }
 
-const TicketPageContainer = inject(stores => ({
-    tickets: stores.tickets,
-    newTicketValue: stores.newTicketValue,
-    setTicketValue: stores.setTicketValue
-}))(TicketPage)
-
-export default observer(TicketPageContainer);
+export default inject('store')(observer(TicketPageContainer));
