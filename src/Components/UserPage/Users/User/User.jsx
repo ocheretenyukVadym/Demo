@@ -3,8 +3,8 @@ import './User.css';
 const User = ({user}) => {
     return(
         <div className="user-container">
-            <div>{user.name}</div>
-            <div>X</div>
+            <p>{user.name}</p>
+            <button className="user-btn">X</button>
         </div>
     )
 }

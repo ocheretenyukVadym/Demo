@@ -7,11 +7,13 @@ import RecycleBin from "../RecycleBin/RecycleBinContainer";
 const Content = (props) => {
     return(
         <div className="content">
-            <Switch>
-                <Route exact path='/userPage'><UserPageContainer /></Route>
-                <Route path='/ticketPage'><TicketPageContainer /></Route>
-                <Route path='/recycleBin'><RecycleBin /></Route>
-            </Switch>
+            <div className="container">
+                <Switch>
+                    <Route exact path='/userPage'><UserPageContainer /></Route>
+                    <Route path='/ticketPage'><TicketPageContainer /></Route>
+                    <Route path='/recycleBin'><RecycleBin /></Route>
+                </Switch>
+            </div>
         </div>
     )
 }

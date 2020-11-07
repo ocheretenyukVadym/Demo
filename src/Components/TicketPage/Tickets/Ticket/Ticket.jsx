@@ -1,9 +1,11 @@
 import React from 'react';
+import './Ticket.scss';
 
-const Ticket = (props) => {
+const Ticket = ({ticket}) => {
     return(
-        <div>
-
+        <div className="ticket-row">
+            <p> {ticket.title}</p>
+            <button className="ticket-btn"> X </button>
         </div>
     )
 }
