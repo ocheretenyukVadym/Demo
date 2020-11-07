@@ -64,15 +64,13 @@ export class Store{
         this.isFetching = false;
         userAPI.addUser(data).then( data => {
             this.isFetching = true;
-            console.log(data);         //temp
         })
     }
 
-    updateUser = id => {
+    updateUser = user => {
         this.isFetching = false;
-        userAPI.updateUser(id).then( data => {
+        userAPI.updateUser(user).then( data => {
             this.isFetching = true;
-            console.log(data);      //temp
             this.getUsers();
         })
     }
@@ -81,7 +79,15 @@ export class Store{
         this.isFetching = false;
         userAPI.deleteUser(id).then( data => {
             this.isFetching = true;
-            console.log(data);      //temp
+            this.getDeletedUsers();
+        })
+    }
+
+    moveToTrash = id => {
+        this.isFetching = false;
+        userAPI.moveToTrash(id).then( data => {
+            this.isFetching = true;
+            this.getDeletedUsers();
             this.getUsers();
         })
     }
@@ -106,7 +112,6 @@ export class Store{
         this.isFetching = false;
         ticketAPI.addTicket(data).then( data => {
             this.isFetching = true;
-            console.log(data);         //temp
         })
     }
 
@@ -114,7 +119,6 @@ export class Store{
         this.isFetching = false;
         ticketAPI.updateTicket(id).then( data => {
             this.isFetching = true;
-            console.log(data);      //temp
             this.getTickets();
         })
     }
@@ -123,7 +127,6 @@ export class Store{
         this.isFetching = false;
         ticketAPI.deleteTicket(id).then( data => {
             this.isFetching = true;
-            console.log(data);      //temp
             this.getTickets();
         })
     }

@@ -18,7 +18,12 @@ class UserPageContainer extends React.Component{
             <div>
                 {this.props.isAddNewUser && <NewUserPage 
                     createNewUser={this.props.store.createNewUser} />}
-                <Users users={this.props.store.users} />
+
+                <Users users={this.props.store.users} 
+                        deleteUser={this.props.store.deleteUser} 
+                        moveToTrash={this.props.store.moveToTrash} 
+                        isUserPage={true} 
+                        updateUser={this.props.store.updateUser}/>
             </div>
         )
     }
