@@ -1,16 +1,13 @@
+import React from "react";
 import './App.scss';
 import Header from './Components/Header/Header';
-import UserPageContainer from './Components/UserPage/UserPageContainer';
-import TicketPageContainer from './Components/TicketPage/TicketPageContainer';
+import Content from "./Components/Content/Content";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <div className="main-container">
-        <UserPageContainer />
-        <TicketPageContainer />
-      </div>
+      <Content />
     </div>
   );
 }
