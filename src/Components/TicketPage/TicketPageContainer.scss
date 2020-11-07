@@ -9,6 +9,8 @@
     align-items: flex-end;
     justify-content: flex-end;
     margin: 10px auto;
+    outline: 0;
+    cursor: alias;
 }
 .title-input{
     height: 30px;
@@ -17,6 +19,7 @@
     border-radius: 30px;
     position: relative;
     margin: 0 auto;
+    outline: 0;
 }
 .container{
     display: flex;

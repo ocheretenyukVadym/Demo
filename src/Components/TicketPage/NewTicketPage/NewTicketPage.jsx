@@ -17,7 +17,7 @@ const NewTicketPage = (props) => {
     e.preventDefault();
 
     props.onSubmit({
-
+      
       // must be post to db;
       text: input
 
