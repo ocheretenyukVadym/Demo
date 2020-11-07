@@ -5,9 +5,38 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border: 2px solid white;
+  border: 1px solid black;
   padding: 5px;
-  margin: 5px;
+  margin: 5px auto;
   border-radius: 10px;
+  background-color: #fff;
+}
+
+.user-container p {
+  margin: 0 0 0 10px;
+}
+
+.user-container .user-btn {
+  padding: 0 5px;
+  background-color: rgba(255, 0, 0, 0);
+  border: 0;
+  border-radius: 2px;
+  color: #000;
+  cursor: pointer;
+  outline: 0;
+}
+
+.user-container .user-btn:active {
+  background-color: red;
+}
+
+.user-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.user-menu * {
+  margin: 0px 5px;
 }
 /*# sourceMappingURL=User.css.map */
