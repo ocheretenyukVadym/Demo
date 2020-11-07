@@ -9,7 +9,6 @@ class UserPageContainer extends React.Component{
     }
 
     render(){
-        //DEBUG:
         return(
             <div>
                 <NewUserPage 
