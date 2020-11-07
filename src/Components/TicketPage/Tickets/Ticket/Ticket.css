@@ -1,1 +1,32 @@
-/* No CSS *//*# sourceMappingURL=Ticket.css.map */
+.ticket-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px auto;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.ticket-row p {
+  margin: 0 0 0 10px;
+}
+
+.ticket-row .ticket-btn {
+  padding: 0 5px;
+  background-color: rgba(255, 0, 0, 0);
+  border: 0;
+  border-radius: 2px;
+  color: #000;
+  cursor: pointer;
+  outline: 0;
+}
+
+.ticket-row .ticket-btn:active {
+  background-color: red;
+}
+/*# sourceMappingURL=Ticket.css.map */
