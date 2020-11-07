@@ -5,7 +5,6 @@ import UserPageContainer from '../UserPage/UserPageContainer';
 import TicketPageContainer from '../TicketPage/TicketPageContainer';
 import RecycleBin from '../RecycleBin/RecycleBinContainer'
 
-
 const Header = (props) => {
     return(
         <div>
@@ -21,7 +20,9 @@ const Header = (props) => {
                 </ul>
                 <ul className="navbar-nav recycle-bin">
                     <li>
-                        <Link className="nav-item" to='../RecycleBin/RecycleBinContaine'>Recycle Bin</Link>
+                        <Link className="nav-item" to='../RecycleBin/RecycleBinContaine'>
+                            <img className ="header-ico" src="https://flaticons.net/icon.php?slug_category=mobile-application&slug_icon=recycle-bin" alt=""/>
+                        </Link>
                     </li>
                 </ul>
             </nav>
