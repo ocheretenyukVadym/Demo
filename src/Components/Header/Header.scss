@@ -1,0 +1,28 @@
+.container{
+    width:60%;
+    height: auto;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(22, 123, 255,1);
+    border-radius: 10px;
+
+    .navbar-light{
+        display: flex;
+        justify-content: space-between;
+
+        .navbar-nav{
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+
+            .nav-item{
+                text-decoration: none;
+                color:white;
+            }
+        }
+        .pages{
+            position: relative;
+            flex: 0 0 20%;
+        }
+    }
+}

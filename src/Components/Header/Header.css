@@ -1,0 +1,40 @@
+.container {
+  width: 60%;
+  height: auto;
+  margin: 20px auto;
+  padding: 20px;
+  background: #167bff;
+  border-radius: 10px;
+}
+
+.container .navbar-light {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .navbar-light .navbar-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style-type: none;
+}
+
+.container .navbar-light .navbar-nav .nav-item {
+  text-decoration: none;
+  color: white;
+}
+
+.container .navbar-light .pages {
+  position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+}
+/*# sourceMappingURL=Header.css.map */
