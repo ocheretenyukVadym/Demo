@@ -11,7 +11,7 @@ export const userAPI = {
                 return response.data});},
 
     addUser(data) {
-        return instance.post(`users`, {data})
+        return instance.post(`users`, data)
             .then(response => {
                 return response.data});},
 

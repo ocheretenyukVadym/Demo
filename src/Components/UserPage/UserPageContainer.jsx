@@ -1,11 +1,13 @@
 import { inject, observer } from 'mobx-react';
 import React from 'react';
+import NewUserPage from "./NewUserPage/NewUserPage";
 
 class UserPage extends React.Component{
     render(){
-        // console.log(this.props.users);
+        //DEBUG:
         return(
             <div>
+                <NewUserPage username={""} setUsername={null}/>
                 <h1>Users Page</h1>
             </div>
         )
