@@ -4,6 +4,10 @@ import NewTicketPage from './NewTicketPage/NewTicketPage';
 import './TicketPageContainer.scss';
 
 class TicketPageContainer extends React.Component{
+    constructor(){
+        super();
+        this.state = { isAddNewTicket: false}
+    }
 
     componentDidMount(){
         this.props.store.getTickets();
@@ -13,11 +17,13 @@ class TicketPageContainer extends React.Component{
         console.log(this.props.users);
         return(
             <div>
-                <NewTicketPage 
+                {this.state.isAddNewTicket && <NewTicketPage 
                     newTicketValue={this.props.store.newTicketValue} 
                     setTicketValue={this.props.store.setTicketValue}
                     createNewTicket={this.props.store.createNewTicket} 
-                />
+                />}
+                
+                
             </div>
         )
     }

@@ -1,8 +1,13 @@
 import { inject, observer } from 'mobx-react';
 import React from 'react';
 import NewUserPage from './NewUserPage/NewUserPage';
+import Users from './Users/Users';
 
 class UserPageContainer extends React.Component{
+    constructor(){
+        super();
+        this.state = { isAddNewUser: false}
+    }
 
     componentDidMount(){
         this.props.store.getUsers();
@@ -11,8 +16,9 @@ class UserPageContainer extends React.Component{
     render(){
         return(
             <div>
-                <NewUserPage 
-                    createNewUser={this.props.store.createNewUser} />
+                {this.props.isAddNewUser && <NewUserPage 
+                    createNewUser={this.props.store.createNewUser} />}
+                <Users users={this.props.store.users} />
             </div>
         )
     }

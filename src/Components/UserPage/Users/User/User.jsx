@@ -1,9 +1,10 @@
 import React from 'react';
-
-const User = (props) => {
+import './User.css';
+const User = ({user}) => {
     return(
-        <div>
-            User
+        <div className="user-container">
+            <div>{user.name}</div>
+            <div>X</div>
         </div>
     )
 }
