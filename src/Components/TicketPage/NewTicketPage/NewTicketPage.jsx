@@ -1,40 +1,27 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 
 
 const NewTicketPage = (props) => {
-  const [input, setInput] = useState(props.edit ? props.edit.value : '');
-
-  const inputRef = useRef(null);
-
-  useEffect(() => {
-    inputRef.current.focus();
-  })
-
-  const hendleChange = e => {
+  const [input, setInput] = useState('');
+  const handleChange = e => {
     setInput(e.target.value);
   }
-  const hendleSubmit = e => {
+  const handleSubmit = e => {
     e.preventDefault();
-
-    props.onSubmit({
-      
-      // must be post to db;
-      text: input
-
-    });
-    setInput('');
+      props.createNewTicket(input)
+  
   }
   return (
     <div className='container'>
         <input
+          value={input}
           type='text'
           name='text'
-          onChange={hendleChange}
+          onChange={e => handleChange(e)}
           placeholder='Title'
           className='title-input'
-          ref={inputRef}
         />
-        <button onClick={hendleSubmit} className='add-button'>Add Ticket</button>
+        <button onClick={handleSubmit} className='add-button'>Add Ticket</button>
     </div>
   )
 }
