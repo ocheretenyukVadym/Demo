@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './User.css';
+
 const User = ({ user, updateUser, isUserPage, moveToTrash, deleteUser }) => {
     const [isViewChanges, setIsViewChanges] = useState(false);
     const [inputValue, setInputValue] = useState(user.name);

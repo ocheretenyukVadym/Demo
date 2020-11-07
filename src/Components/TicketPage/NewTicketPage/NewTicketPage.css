@@ -1,1 +1,34 @@
-/* No CSS *//*# sourceMappingURL=NewTicketPage.css.map */
+.add-button {
+  width: 100px;
+  height: 30px;
+  margin: 10px;
+  background: blue;
+  border: none;
+  display: block;
+  border-radius: 30px;
+  margin: 10px auto;
+  outline: 0;
+  cursor: pointer;
+}
+
+.title-input {
+  height: 30px;
+  width: 300px;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  margin: 0 auto;
+  outline: 0;
+  text-align: center;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+/*# sourceMappingURL=NewTicketPage.css.map */
