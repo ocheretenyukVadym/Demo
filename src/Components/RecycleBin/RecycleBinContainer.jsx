@@ -3,8 +3,8 @@ import React from 'react'
 class RecycleBinContainer extends React.Component{
     render(){
         return(
-            <div>
-                <button>Recycle Bin</button>
+            <div className="recycle-bin-container">
+
             </div>
         )
     }
