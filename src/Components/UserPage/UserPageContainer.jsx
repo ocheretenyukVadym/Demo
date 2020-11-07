@@ -13,10 +13,7 @@ class UserPageContainer extends React.Component{
         return(
             <div>
                 <NewUserPage 
-                    newUserValue={this.props.store.newUserValue} 
-                    setUserValue={this.props.store.setUserValue}
-                    createNewUser={this.props.store.createNewUser}  
-                />
+                    createNewUser={this.props.store.createNewUser} />
             </div>
         )
     }

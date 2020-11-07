@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const NewUserPage = ({username, setUsername}) => {
+const NewUserPage = ({ createNewUser }) => {
+    const [name, setName] = useState("");
+    const submitHandler = (name) => {
+        createNewUser(name);
+        setName("");
+    }
 
     return(
-        <div>
-            <input type="text" placeholder="Username" value={username} onChange={event => setUsername(event.target.value)}/>
+        <div className="new-user-form">
+            <input type="text" placeholder="Username" value={name} onChange={e => setName(e.target.value)}/>
+            <input type="submit" value="Submit" onClick={() => submitHandler(name)}/>
         </div>
     )
 }

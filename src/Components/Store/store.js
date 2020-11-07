@@ -10,7 +10,6 @@ export class Store{
 
     isFetching = true;
 
-    newUserValue = '';
     newTicketValue = '';
 
     constructor() {
@@ -20,7 +19,6 @@ export class Store{
             deletedUsers: observable,
             deletedTickets: observable,
             isFetching: observable,
-            newUserValue: observable,
             newTicketValue: observable,
             setUserValue: action,
             setTicketValue: action,
