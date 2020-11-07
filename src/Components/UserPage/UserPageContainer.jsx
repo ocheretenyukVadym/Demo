@@ -1,19 +1,25 @@
 import { inject, observer } from 'mobx-react';
 import React from 'react';
+import NewUserPage from './NewUserPage/NewUserPage';
 
-class UserPage extends React.Component{
+class UserPageContainer extends React.Component{
+
+    componentDidMount(){
+        this.props.store.getUsers();
+    }
+
     render(){
-        // console.log(this.props.users);
         return(
             <div>
-                <h1>Users Page</h1>
+                <NewUserPage 
+                    newUserValue={this.props.store.newUserValue} 
+                    setUserValue={this.props.store.setUserValue}
+                    createNewUser={this.props.store.createNewUser}  
+                />
             </div>
         )
     }
 }
 
-const UserPageContainer = inject(stores => ({
-    users: stores.users,
-}))(UserPage)
 
-export default observer(UserPageContainer);
+export default inject('store')(observer(UserPageContainer));

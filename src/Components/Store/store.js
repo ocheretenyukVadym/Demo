@@ -88,7 +88,7 @@ export class Store{
         })
     }
 
-    getDeletedUsers = () => {           //doesn`t exist yet
+    getDeletedUsers = () => {
         this.isFetching = false;
         userAPI.getDeletedUsers().then( data => {
             this.isFetching = true;
@@ -130,7 +130,7 @@ export class Store{
         })
     }
 
-    getDeletedTickets = () => {           //doesn`t exist yet
+    getDeletedTickets = () => { 
         this.isFetching = false;
         ticketAPI.getDeletedTickets().then( data => {
             this.isFetching = true;
@@ -138,7 +138,7 @@ export class Store{
         })
     }
 
-    assignToUser = (userId, ticketId) => {            //doesn`t exist yet
+    assignToUser = (userId, ticketId) => {
         this.isFetching = false;
         ticketAPI.assignToUser(userId,ticketId).then( data => {
             this.isFetching = true;
