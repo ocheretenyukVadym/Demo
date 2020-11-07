@@ -68,9 +68,9 @@ export class Store{
         })
     }
 
-    updateUser = id => {
+    updateUser = user => {
         this.isFetching = false;
-        userAPI.updateUser(id).then( data => {
+        userAPI.updateUser(user).then( data => {
             this.isFetching = true;
             console.log(data);      //temp
             this.getUsers();
@@ -82,6 +82,16 @@ export class Store{
         userAPI.deleteUser(id).then( data => {
             this.isFetching = true;
             console.log(data);      //temp
+            this.getDeletedUsers();
+        })
+    }
+
+    moveToTrash = id => {
+        this.isFetching = false;
+        userAPI.moveToTrash(id).then( data => {
+            this.isFetching = true;
+            console.log(data);      //temp
+            this.getDeletedUsers();
             this.getUsers();
         })
     }

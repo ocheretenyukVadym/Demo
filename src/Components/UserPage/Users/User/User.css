@@ -10,4 +10,14 @@
   margin: 5px;
   border-radius: 10px;
 }
+
+.user-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.user-menu * {
+  margin: 0px 5px;
+}
 /*# sourceMappingURL=User.css.map */

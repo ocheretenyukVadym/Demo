@@ -4,6 +4,7 @@ const instance = Axios.create({
     baseURL: 'http://localhost:8765/api/',
     headers: {
         'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "*",
     },
     
 });
@@ -20,7 +21,7 @@ export const userAPI = {
                 return response.data});},
 
     updateUser(user) {
-        return instance.put(`users/${user.id}`, user)
+        return instance.put(`users`, user)
             .then(response => {
                 return response.data});},
 
