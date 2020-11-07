@@ -1,22 +1,26 @@
 import Axios from 'axios';
 
 const instance = Axios.create({
-    baseURL: 'https:// ... /api/',
+    baseURL: 'http://localhost:8765/api/',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    
 });
 
 export const userAPI = {
     getUsers() {
         return instance.get(`users`)
             .then(response => {
-                return response.data});},
+                return response.data})},
 
     addUser(data) {
-        return instance.post(`users`, data)
+        return instance.post(`users`, {name: data})
             .then(response => {
                 return response.data});},
 
-    updateUser(id) {
-        return instance.put(`users/${id}`, {})
+    updateUser(user) {
+        return instance.put(`users/${user.id}`, user)
             .then(response => {
                 return response.data});},
 
@@ -24,9 +28,14 @@ export const userAPI = {
         return instance.delete(`users/${id}`)
         .then(response => {
             return response.data});},
+    
+    moveToTrash(id) {
+        return instance.post(`users/moveToTrash/${id}`,{})
+            .then(response => {
+                return response.data});},
 
     getDeletedUsers(){
-        return instance.get(`users/deleted`)            //doesn`t exist yet
+        return instance.get(`users/allInTrash`)    
         .then(response => {
             return response.data});},
 }
@@ -37,28 +46,33 @@ export const ticketAPI = {
             .then(response => {
                 return response.data});},
 
-    addTicket() {
-        return instance.post(`tickets`, {})
+    addTicket(data) {
+        return instance.post(`tickets`, {title: data})
             .then(response => {
                 return response.data});},
 
-    updateTicket(id) {
-        return instance.put(`tickets/${id}`, {})
+    updateTicket(ticket) {
+        return instance.put(`tickets/${ticket.id}`, ticket)
             .then(response => {
                 return response.data});},
 
     deleteTicket(id) {
-        return instance.delete(`tickets/${id}`)
+        return instance.delete(`tickets/moveToTrash/${id}`)
             .then(response => {
                 return response.data});},
 
     getDeletedTickets() {
-        return instance.get(`tickets/deleted`)          //doesn`t exist yet
+        return instance.get(`tickets/allInTrash`) 
+            .then(response => {
+                return response.data});},
+
+    moveToTrash(id) {
+        return instance.post(`tickets/moveToTrash/${id}`,{})
             .then(response => {
                 return response.data});},
 
     assignToUser(userId, ticketId) {
-        return instance.post(`tickets/`)            //????????????
+        return instance.post(`tickets/assign?ticketId=${ticketId}&toUserId=${userId}`) 
             .then(response => {
                 return response.data});}
 } 
