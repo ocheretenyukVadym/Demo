@@ -6,7 +6,7 @@ import './TicketPageContainer.scss';
 class TicketPageContainer extends React.Component{
     constructor(){
         super();
-        this.state = { isAddNewTicket: true}
+        this.state = { isAddNewTicket: false}
     }
 
     componentDidMount(){
