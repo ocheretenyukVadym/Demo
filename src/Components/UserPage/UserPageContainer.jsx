@@ -1,33 +1,28 @@
 import { inject, observer } from 'mobx-react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import NewUserPage from './NewUserPage/NewUserPage';
 import Users from './Users/Users';
 
-class UserPageContainer extends React.Component{
-    constructor(){
-        super();
-        this.state = { isAddNewUser: false}
-    }
+const UserPageContainer = (props) =>{
+    const[isAddNewUser] = useState(true);
+    useEffect(() => {
+        props.store.getUsers();
+    },[]);
 
-    componentDidMount(){
-        this.props.store.getUsers();
-    }
 
-    render(){
         return(
             <div>
-                {this.props.isAddNewUser && <NewUserPage 
-                    createNewUser={this.props.store.createNewUser} />}
+                {isAddNewUser && <NewUserPage 
+                    createNewUser={props.store.createNewUser} />}
 
-                <Users users={this.props.store.users} 
-                        deleteUser={this.props.store.deleteUser} 
-                        moveToTrash={this.props.store.moveToTrash} 
+                <Users users={props.store.users} 
+                        deleteUser={props.store.deleteUser} 
+                        moveToTrash={props.store.moveToTrash} 
                         isUserPage={true} 
-                        updateUser={this.props.store.updateUser}/>
+                        updateUser={props.store.updateUser}/>
             </div>
         )
-    }
-}
 
+    }
 
 export default inject('store')(observer(UserPageContainer));

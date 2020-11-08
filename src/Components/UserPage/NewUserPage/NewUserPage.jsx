@@ -1,4 +1,10 @@
 import React, {useState} from 'react';
+import './NewUserPage.css'
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import App from './Modal/ShowModal';
+
+
 
 const NewUserPage = ({ createNewUser }) => {
     const [name, setName] = useState("");
@@ -6,13 +12,14 @@ const NewUserPage = ({ createNewUser }) => {
         createNewUser(name);
         setName("");
     }
-
     return(
-        <div className="new-user-form">
-            <input type="text" placeholder="Username" value={name} onChange={e => setName(e.target.value)}/>
-            <input type="submit" value="Submit" onClick={() => submitHandler(name)}/>
-        </div>
+      <App submitHandler = {submitHandler}
+      createNewUser = {createNewUser}
+      setName = {setName}
+      name = {name}
+      />
+      
     )
-}
+  }
 
 export default NewUserPage;
