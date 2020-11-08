@@ -58,7 +58,7 @@ export const ticketAPI = {
                 return response.data});},
 
     deleteTicket(id) {
-        return instance.delete(`tickets/moveToTrash/${id}`)
+        return instance.delete(`tickets/${id}`)
             .then(response => {
                 return response.data});},
 

@@ -5,13 +5,54 @@
     padding: 5px;
     margin: 5px auto;
     border-radius: 10px;
+    background-color: #fff;
 
-}
+    p{
+        flex: 1 1 auto;
+        margin: 0 0 0 10px;
+    }
+    
+    .user-menu{
+        display: flex;
+        margin: 0 5px;
+        display: flex;
+        justify-content: flex-end;
 
-.user-menu{
-    display: flex;
-}
-
-.user-menu *{
-    margin: 0px 5px;
+        .update-pen{
+            width: 5%;
+            cursor: pointer;
+        }
+        .delete-btn{
+            padding: 0 5px;
+            background-color: rgba(255,0,0,0);
+            border: 0;
+            border-radius: 2px;
+            color: #000;
+            cursor: pointer;
+            outline: 0;
+        }
+        .delete-btn:active{
+            background-color: rgba(255, 0, 0,1);
+        }
+    }
+    .update-input{
+        border-radius: 2px;
+        border: 1px solid black;
+        outline: 0;
+    }
+    .update-input:focus{
+        border: 1px solid green;
+    }
+    .save-btn{
+        padding: 5px 10px;
+        background-color: rgba(255,0,0,0);
+        border: 0;
+        border-radius: 2px;
+        color: #000;
+        cursor: pointer;
+        outline: 0;
+    }
+    .save-btn:active{
+        background-color: rgba(0, 200, 0,1);
+    }
 }

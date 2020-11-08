@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './User.css';
+import './User.scss';
 
 const User = ({ user, updateUser, isUserPage, moveToTrash, deleteUser }) => {
     const [isViewChanges, setIsViewChanges] = useState(false);
@@ -20,25 +20,23 @@ const User = ({ user, updateUser, isUserPage, moveToTrash, deleteUser }) => {
 
     return (
         <div>
-            {!isViewChanges &&
+            {!isViewChanges ?
                 <div className="user-container">
-                    <div>{user.name}</div>
+                    <p>{user.name}</p>
                     <div className="user-menu">
-                        <div onClick={clickUpdateUser}>
-                            {isUserPage && 'update'}
-                        </div>
+                        {isUserPage && 
+                            <img className='update-pen' onClick={clickUpdateUser} src='https://cdn.iconscout.com/icon/free/png-512/pencil-60-119100.png' />
+                        }
                         {isUserPage ?
-                            <div onClick={moveToRecycleBin}>X</div> :
-                            <div onClick={moveToDeletedUsers}>X</div>}
+                            <button className="delete-btn" onClick={moveToRecycleBin}>X</button> :
+                            <button className="delete-btn" onClick={moveToDeletedUsers}>X</button>}
                     </div>
-                </div>}
+                </div>
 
-            {isViewChanges &&
+            :
                 <div className="user-container">
-                    <div>
-                        <input value={inputValue} onChange={e => handlerChange(e)} />
-                    </div>
-                    <div onClick={saveUser}>save</div>
+                    <input className="update-input" value={inputValue} onChange={e => handlerChange(e)} />
+                    <button className="save-btn" onClick={saveUser}>save</button>
 
                 </div>}
         </div>

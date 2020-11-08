@@ -139,6 +139,15 @@ export class Store{
         })
     }
 
+    moveToTrashTicket = id => {
+        this.isFetching = false;
+        ticketAPI.moveToTrash(id).then( data => {
+            this.isFetching = true;
+            this.getDeletedTickets();
+            this.getTickets();
+        })
+    }
+
     assignToUser = (userId, ticketId) => {
         this.isFetching = false;
         ticketAPI.assignToUser(userId,ticketId).then( data => {

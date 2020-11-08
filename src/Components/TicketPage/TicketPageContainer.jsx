@@ -15,14 +15,16 @@ class TicketPageContainer extends React.Component{
     }
 
     render(){
-        console.log(this.props.users);
         return(
             <div>
                 {this.props.isAddNewTicket && <NewTicketPage 
                     createNewTicket={this.props.store.createNewTicket}
                 />}
-                <Tickets tickets = {this.props.store.tickets}/>
-                
+                <Tickets tickets = {this.props.store.tickets}
+                    deleteTicket={this.props.store.deleteTicket} 
+                    moveToTrash={this.props.store.moveToTrashTicket} 
+                    isTicketPage={true} 
+                    updateTicket={this.props.store.updateTicket}/>
             </div>
         )
     }
