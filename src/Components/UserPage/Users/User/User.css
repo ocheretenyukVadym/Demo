@@ -13,10 +13,29 @@
 }
 
 .user-container p {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   margin: 0 0 0 10px;
 }
 
-.user-container .user-btn {
+.user-container .user-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 5px;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.user-container .user-menu .update-pen {
+  width: 5%;
+  cursor: pointer;
+}
+
+.user-container .user-menu .delete-btn {
   padding: 0 5px;
   background-color: rgba(255, 0, 0, 0);
   border: 0;
@@ -26,17 +45,31 @@
   outline: 0;
 }
 
-.user-container .user-btn:active {
+.user-container .user-menu .delete-btn:active {
   background-color: red;
 }
 
-.user-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.user-container .update-input {
+  border-radius: 2px;
+  border: 1px solid black;
+  outline: 0;
 }
 
-.user-menu * {
-  margin: 0px 5px;
+.user-container .update-input:focus {
+  border: 1px solid green;
+}
+
+.user-container .save-btn {
+  padding: 5px 10px;
+  background-color: rgba(255, 0, 0, 0);
+  border: 0;
+  border-radius: 2px;
+  color: #000;
+  cursor: pointer;
+  outline: 0;
+}
+
+.user-container .save-btn:active {
+  background-color: #00c800;
 }
 /*# sourceMappingURL=User.css.map */

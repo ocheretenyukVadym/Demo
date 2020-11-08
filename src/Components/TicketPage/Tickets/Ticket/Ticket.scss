@@ -1,4 +1,4 @@
-.ticket-row{
+.ticket-container{
     display: flex;
     justify-content: space-between;
     border: 1px solid black;
@@ -8,11 +8,43 @@
     background-color: #fff;
 
     p{
+        flex: 1 1 auto;
         margin: 0 0 0 10px;
     }
 
-    .ticket-btn{
-        padding: 0 5px;
+    .ticket-menu{
+        display: flex;
+        margin: 0 5px;
+        display: flex;
+        justify-content: flex-end;
+
+        .update-pen{
+            width: 5%;
+            cursor: pointer;
+        }
+        .delete-btn{
+            padding: 0 5px;
+            background-color: rgba(255,0,0,0);
+            border: 0;
+            border-radius: 2px;
+            color: #000;
+            cursor: pointer;
+            outline: 0;
+        }
+        .delete-btn:active{
+            background-color: rgba(255, 0, 0,1);
+        }
+    }
+    .update-input{
+        border-radius: 2px;
+        border: 1px solid black;
+        outline: 0;
+    }
+    .update-input:focus{
+        border: 1px solid green;
+    }
+    .save-btn{
+        padding: 5px 10px;
         background-color: rgba(255,0,0,0);
         border: 0;
         border-radius: 2px;
@@ -20,7 +52,7 @@
         cursor: pointer;
         outline: 0;
     }
-    .ticket-btn:active{
-        background-color: rgba(255, 0, 0,1);
+    .save-btn:active{
+        background-color: rgba(0, 200, 0,1);
     }
 }
