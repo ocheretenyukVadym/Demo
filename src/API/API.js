@@ -88,7 +88,7 @@ export const ticketAPI = {
                 return response.data});},
     
     unassignFromUser(id) {
-        return instance.post(`unassign/${id}`) 
+        return instance.post(`tickets/unassign/${id}`) 
             .then(response => {
                 return response.data});},
 } 

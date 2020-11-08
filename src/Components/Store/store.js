@@ -189,8 +189,8 @@ export class Store{
         this.isFetching = false;
         ticketAPI.unassignFromUser(id).then( data => {
             this.isFetching = true;
-            data && this.getTickets();
-            data && this.getUsers();
+            this.getTickets();
+            this.getUsers();
         })
     }
 }
