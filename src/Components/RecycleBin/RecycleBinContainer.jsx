@@ -5,21 +5,21 @@ import { Route, useHistory, useRouteMatch } from "react-router-dom";
 import './RecycleBinContainer.css'
 
 const RecycleBinContainer = () => {
-    const [selectedUsers, setSelectedUsers] = useState(true);
+    const [selected, setSelected] = useState(true);
     const { url } = useRouteMatch();
     let history = useHistory();
     
     useEffect(() => {
-        setSelectedUsers(true);
-    },[])
+        if(history.location.pathname === "/recycleBin/users") setSelected(true)
+    }, )
 
     const clickOnUsers = () => {
-        setSelectedUsers(true);
+        setSelected(true);
         history.push(`${url}/users`)
     }
 
     const clickOnTickets = () => {
-        setSelectedUsers(false);
+        setSelected(false);
         history.push(`${url}/tickets`)
     }
 
@@ -29,11 +29,11 @@ const RecycleBinContainer = () => {
                 <div className="switch-block">
                     <div className="switch-toggle">
 
-                        <input id='first-switch-for-persent' name="switch" type="radio" checked={selectedUsers}  />
-                        <label for='first-switch-for-persent' onClick={clickOnUsers}>Users</label>
+                        <input id='radio1' name="switch" type="radio" checked={selected}  />
+                        <label for='radio1t' onClick={clickOnUsers}>Users</label>
 
-                        <input id="second-switch-for-persent"  name="switch" type="radio" />
-                        <label for="second-switch-for-persent" onClick={clickOnTickets}>Tickets</label>
+                        <input id="radio2"  name="switch" type="radio" />
+                        <label for="radio2" onClick={clickOnTickets}>Tickets</label>
                     </div>
                 </div>
             </div>
