@@ -3,17 +3,17 @@ import User from './User/User';
 import './Users.scss';
 
 const Users = (props) => {
-    return(
+    return (
         <div>
             {
-            props.users.map(user => {
-            return(
-                <User key={user.id} 
-                user={user} {...props}
-                />
-            )
-            })
-        }  
+                props.users.map(user => {
+                    return (
+                        <User key={user.id}
+                              user={user} {...props}
+                        />
+                    )
+                })
+            }
         </div>
     )
 }
