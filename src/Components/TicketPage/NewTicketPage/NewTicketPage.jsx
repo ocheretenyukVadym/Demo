@@ -1,27 +1,23 @@
 import React, { useState } from 'react';
 import './NewTicketPage.css'
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import App from './Modal/ShowModalTicket';
 
-const NewTicketPage = (props) => {
-  const [input, setInput] = useState('');
-  const handleChange = e => {
-    setInput(e.target.value);
+
+const NewTicketPage = ({ createNewTicket }) => {
+  const [input, setInput] = useState("");
+  const submitHandler = (input) => {
+      createNewTicket(input);
+      setInput("");
   }
-  const handleSubmit = e => {
-    e.preventDefault();
-      props.createNewTicket(input)
-      setInput('');
-  }
-  return (
-    <div className='container'>
-        <input
-          value={input}
-          type='text'
-          onChange={e => handleChange(e)}
-          placeholder='Title'
-          className='title-input'
-        />
-        <button onClick={handleSubmit} className='add-button'>Add Ticket</button>
-    </div>
+  return(
+    <App submitHandler = {submitHandler}
+    createNewTicket = {createNewTicket}
+    setInput = {setInput}
+    input = {input}
+    />
+    
   )
 }
 

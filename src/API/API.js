@@ -39,6 +39,11 @@ export const userAPI = {
         return instance.get(`users/allInTrash`)    
         .then(response => {
             return response.data});},
+
+    restoreFromRecycleBin(id) {
+        return instance.post(`users/restore/${id}`,{})
+            .then(response => {
+                return response.data});},
 }
 
 export const ticketAPI = {
@@ -53,7 +58,7 @@ export const ticketAPI = {
                 return response.data});},
 
     updateTicket(ticket) {
-        return instance.put(`tickets/${ticket.id}`, ticket)
+        return instance.put(`tickets`, ticket)
             .then(response => {
                 return response.data});},
 
@@ -72,8 +77,18 @@ export const ticketAPI = {
             .then(response => {
                 return response.data});},
 
+    restoreFromRecycleBin(id) {
+        return instance.post(`tickets/restore/${id}`,{})
+            .then(response => {
+                return response.data});},
+
     assignToUser(userId, ticketId) {
         return instance.post(`tickets/assign?ticketId=${ticketId}&toUserId=${userId}`) 
             .then(response => {
-                return response.data});}
+                return response.data});},
+    
+    unassignFromUser(id) {
+        return instance.post(`unassign/${id}`) 
+            .then(response => {
+                return response.data});},
 } 

@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import './NewUserPage.css'
-import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './Modal/ShowModal';
 

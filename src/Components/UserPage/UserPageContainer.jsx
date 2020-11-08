@@ -8,7 +8,6 @@ const UserPageContainer = (props) =>{
         props.store.getUsers();
     },[]);
 
-
         return(
             <div className="container">
                 <NewUserPage 
