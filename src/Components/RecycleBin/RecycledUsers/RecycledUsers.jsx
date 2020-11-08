@@ -13,8 +13,8 @@ class RecycledUsers extends React.Component{
                 <Users users={this.props.store.deletedUsers}
                        deleteUser={this.props.store.deleteUser}
                        moveToTrash={this.props.store.moveToTrash}
-                       updateUser={this.props.store.updateUser}
-                       isUserPage={false}/>
+                       isUserPage={false}
+                       updateUser={this.props.store.updateUser}/>
             </div>
         )
     }
