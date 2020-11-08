@@ -5,7 +5,11 @@ const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, deleteTicket, 
 
     const [isViewChanges, setIsViewChanges] = useState(false);
     const [inputValue, setInputValue] = useState(ticket.title);
+    let date = new Date(ticket.createdAt);
+    function converDate(date){
 
+        return (`${date.getHours()}:${date.getMinutes()}  ${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`);
+    }
     const clickUpdateTicket = () => setIsViewChanges(true);
     const handlerChange = e => setInputValue(e.target.value);
     const moveToRecycleBin = () => moveToTrash(ticket.id);
@@ -20,10 +24,21 @@ const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, deleteTicket, 
         setInputValue(ticket.title);
     }
 
+
     return (
         <div>
             {!isViewChanges ?
                 <div className="ticket-container">
+                        <p>{ticket.title}</p>
+                        <p>{converDate(date)}</p>
+                        {isTicketPage &&
+                            <img className='update-pen' onClick={clickUpdateTicket} src='https://cdn.iconscout.com/icon/free/png-512/pencil-60-119100.png' />
+                        }
+                        {isTicketPage ?
+                            <button className="delete-btn" onClick={moveToRecycleBin}>X</button> :
+                            <button className="delete-btn" onClick={moveToDeletedTickets}>X</button>}
+                </div>
+
 
                     {isTicketPage ? "" :
                         <div className="restore-button" onClick={restoreFromTrash}>restore</div>
