@@ -16,10 +16,11 @@ class UserPageContainer extends React.Component{
     render(){
         return(
             <div>
-                {this.state.isAddNewUser && <NewUserPage 
-                    createNewUser={this.props.store.createNewUser} />}
-
-                {!this.state.isAddNewUser && <Users users={this.props.store.users} 
+                {this.state.isAddNewUser?
+                <NewUserPage 
+                    createNewUser={this.props.store.createNewUser} />
+                :
+                 <Users users={this.props.store.users} 
                         deleteUser={this.props.store.deleteUser} 
                         moveToTrash={this.props.store.moveToTrash} 
                         isUserPage={true} 
