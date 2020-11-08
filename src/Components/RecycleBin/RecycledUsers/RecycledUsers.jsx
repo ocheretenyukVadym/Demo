@@ -10,7 +10,11 @@ class RecycledUsers extends React.Component{
     render() {
         return(
             <div className="recycled-users">
-                <Users users={this.props.store.deletedUsers}/>
+                <Users users={this.props.store.deletedUsers}
+                       deleteUser={this.props.store.deleteUser}
+                       moveToTrash={this.props.store.moveToTrash}
+                       updateUser={this.props.store.updateUser}
+                       isUserPage={false}/>
             </div>
         )
     }

@@ -22,7 +22,7 @@ class UserPageContainer extends React.Component{
                 <Users users={this.props.store.users} 
                         deleteUser={this.props.store.deleteUser} 
                         moveToTrash={this.props.store.moveToTrash} 
-                        isUserPage={true} 
+                        isUserPage={true}
                         updateUser={this.props.store.updateUser}/>
             </div>
         )
