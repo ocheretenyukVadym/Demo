@@ -39,6 +39,11 @@ export const userAPI = {
         return instance.get(`users/allInTrash`)    
         .then(response => {
             return response.data});},
+
+    restoreFromRecycleBin(id) {
+        return instance.post(`users/restore/${id}`,{})
+            .then(response => {
+                return response.data});},
 }
 
 export const ticketAPI = {

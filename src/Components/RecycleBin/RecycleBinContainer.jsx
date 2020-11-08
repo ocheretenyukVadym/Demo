@@ -5,6 +5,7 @@ import {Link, Route, useRouteMatch} from "react-router-dom";
 
 const RecycleBinContainer = () => {
     const { url } = useRouteMatch();
+    
 
     return(
         <div className="recycle-bin-container">

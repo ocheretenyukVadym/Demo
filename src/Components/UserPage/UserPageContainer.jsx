@@ -11,6 +11,7 @@ class UserPageContainer extends React.Component{
 
     componentDidMount(){
         this.props.store.getUsers();
+        this.props.store.restoreUserFromRecycleBin(9);
     }
 
     render(){

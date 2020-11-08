@@ -37,6 +37,7 @@ export class Store{
             deleteTicket: action,
             getDeletedTickets: action,
             assignToUser: action,
+            restoreUserFromRecycleBin: action,
         })
     }
 
@@ -99,6 +100,16 @@ export class Store{
             this.setDeletedUsers(data);
         })
     }
+
+    restoreUserFromRecycleBin = id => {
+        this.isFetching = false;
+        userAPI.restoreFromRecycleBin(id).then( data => {
+            this.isFetching = true;
+            this.getDeletedUsers();
+            this.getUsers();
+        })
+    }
+
 
     getTickets = () => {
         this.isFetching = false;
