@@ -22,6 +22,7 @@
                 color:white;
                 display: flex;
                 justify-content: flex-end;
+                padding: 5px 15px;
 
                 .header-ico{
                     width: 10%;
@@ -29,8 +30,7 @@
             }
 
             .active {
-                color: yellow;
-                background-color: #7bb8f8;
+                background-color: #7e96c8;
                 border-radius: 9px;
             }
         }
