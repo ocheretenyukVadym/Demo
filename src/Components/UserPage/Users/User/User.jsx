@@ -15,7 +15,10 @@ const User = ({user, updateUser, isUserPage, moveToTrash, deleteUser, restore}) 
     const moveToDeletedUsers = () => deleteUser(user.id);
     const restoreFromTrash = () => restore(user.id);
 
-    const isPresentTickets = () => user.tickets.length != 0;
+    const isPresentTickets = () => {
+        let tmp = user.tickets.filter(t => !t.inTrash )
+        return tmp.length != 0;
+    }
 
     const showTicketslist = () => {isShowTickets? setIsShowTickets(false) : setIsShowTickets(true)}
     const saveUser = () => {
