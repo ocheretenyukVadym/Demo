@@ -23,7 +23,6 @@ const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, deleteTicket})
         <div>
             {!isViewChanges ?
                 <div className="ticket-container">
-                    <div className="ticket-menu">
                         <p>{ticket.title}</p>
                         {isTicketPage &&
                             <img className='update-pen' onClick={clickUpdateTicket} src='https://cdn.iconscout.com/icon/free/png-512/pencil-60-119100.png' />
@@ -31,7 +30,6 @@ const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, deleteTicket})
                         {isTicketPage ?
                             <button className="delete-btn" onClick={moveToRecycleBin}>X</button> :
                             <button className="delete-btn" onClick={moveToDeletedTickets}>X</button>}
-                    </div>
                 </div>
 
             :

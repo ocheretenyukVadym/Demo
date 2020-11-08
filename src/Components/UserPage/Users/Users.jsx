@@ -4,7 +4,7 @@ import './Users.scss';
 
 const Users = (props) => {
     return(
-        <div className="container">
+        <div>
             {
             props.users.map(user => {
             return(
