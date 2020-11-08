@@ -1,0 +1,34 @@
+import React, {useState} from 'react';
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Modal } from 'react-bootstrap';
+
+
+
+function MyVerticallyCenteredModalTicket(props) {
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Add Ticket
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <div className="new-ticket-form">
+              <input className='title-input' type="text" placeholder="Ticket" value={props.input} onChange={e => props.setInput(e.target.value)}/>
+             <input className='add-button' type="submit" value="Submit" onClick={() => props.submitHandler(props.input)}/>
+           </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={props.onHide}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
+  
+  export default MyVerticallyCenteredModalTicket;

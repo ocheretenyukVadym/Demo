@@ -1,33 +1,27 @@
 import { inject, observer } from 'mobx-react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import NewTicketPage from './NewTicketPage/NewTicketPage';
 import './TicketPageContainer.scss';
 import Tickets from './Tickets/Tickets';
 
-class TicketPageContainer extends React.Component{
-    constructor(){
-        super();
-        this.state = { isAddNewTicket: false}
-    }
+const TicketPageContainer = (props) =>{
+    useEffect(() => {
+        props.store.getUsers();
+    },[]);
 
-    componentDidMount(){
-        this.props.store.getTickets();
-    }
 
-    render(){
         return(
             <div>
-                {this.props.isAddNewTicket && <NewTicketPage 
-                    createNewTicket={this.props.store.createNewTicket}
+                {<NewTicketPage 
+                    createNewTicket={props.store.createNewTicket}
                 />}
-                <Tickets tickets = {this.props.store.tickets}
-                    deleteTicket={this.props.store.deleteTicket} 
-                    moveToTrash={this.props.store.moveToTrashTicket} 
+                <Tickets tickets = {props.store.tickets}
+                    deleteTicket={props.store.deleteTicket} 
+                    moveToTrash={props.store.moveToTrashTicket} 
                     isTicketPage={true} 
-                    updateTicket={this.props.store.updateTicket}/>
+                    updateTicket={props.store.updateTicket}/>
             </div>
         )
-    }
 }
 
 export default inject('store')(observer(TicketPageContainer));
