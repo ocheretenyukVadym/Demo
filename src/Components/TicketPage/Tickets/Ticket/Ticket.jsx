@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
 import './Ticket.scss';
 
-const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, deleteTicket}) => {
-    
+const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, deleteTicket, restore}) => {
+
     const [isViewChanges, setIsViewChanges] = useState(false);
     const [inputValue, setInputValue] = useState(ticket.title);
-    debugger;
     let date = new Date(ticket.createdAt);
     function converDate(date){
 
@@ -15,8 +14,10 @@ const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, deleteTicket})
     const handlerChange = e => setInputValue(e.target.value);
     const moveToRecycleBin = () => moveToTrash(ticket.id);
     const moveToDeletedTickets = () => deleteTicket(ticket.id);
+    const restoreFromTrash = () => restore(ticket.id);
+
     const saveTicket = () => {
-        let newTicket = { ...ticket };
+        let newTicket = {...ticket};
         newTicket.title = inputValue;
         updateTicket(newTicket);
         setIsViewChanges(false);
@@ -38,9 +39,23 @@ const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, deleteTicket})
                             <button className="delete-btn" onClick={moveToDeletedTickets}>X</button>}
                 </div>
 
-            :
+
+                    {isTicketPage ? "" :
+                        <div className="restore-button" onClick={restoreFromTrash}>restore</div>
+                    }
+
+                    <p>{ticket.title}</p>
+                    {isTicketPage &&
+                    <img className='update-pen' onClick={clickUpdateTicket}
+                         src='https://cdn.iconscout.com/icon/free/png-512/pencil-60-119100.png'/>
+                    }
+                    {isTicketPage ?
+                        <button className="delete-btn" onClick={moveToRecycleBin}>X</button> :
+                        <button className="delete-btn" onClick={moveToDeletedTickets}>X</button>}
+                </div>
+                :
                 <div className="ticket-container">
-                    <input className="update-input" value={inputValue} onChange={e => handlerChange(e)} />
+                    <input className="update-input" value={inputValue} onChange={e => handlerChange(e)}/>
                     <button className="save-btn" onClick={saveTicket}>save</button>
                 </div>}
         </div>
