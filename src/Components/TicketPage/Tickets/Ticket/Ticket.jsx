@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './Ticket.scss';
 
-const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, deleteTicket, restore}) => {
+const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, deleteTicket, restore, getUsername, names }) => {
 
     const [isViewChanges, setIsViewChanges] = useState(false);
     const [inputValue, setInputValue] = useState(ticket.title);
@@ -20,6 +20,10 @@ const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, deleteTicket, 
         setInputValue(ticket.title);
     }
 
+    useEffect(() => {
+        getUsername(ticket.id);
+    });
+
     return (
         <div>
             {!isViewChanges ?
@@ -30,6 +34,9 @@ const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, deleteTicket, 
                     }
 
                     <p>{ticket.title}</p>
+
+                    <div className="username">username:{names.get(ticket.id)}</div>
+
                     {isTicketPage &&
                     <img className='update-pen' onClick={clickUpdateTicket}
                          src='https://cdn.iconscout.com/icon/free/png-512/pencil-60-119100.png'/>

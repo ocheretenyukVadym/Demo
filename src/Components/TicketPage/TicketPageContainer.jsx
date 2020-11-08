@@ -1,5 +1,5 @@
 import {inject, observer} from 'mobx-react';
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import NewTicketPage from './NewTicketPage/NewTicketPage';
 import './TicketPageContainer.scss';
 import Tickets from './Tickets/Tickets';
@@ -14,11 +14,14 @@ const TicketPageContainer = (props) => {
             {<NewTicketPage
                 createNewTicket={props.store.createNewTicket}
             />}
-            <Tickets tickets={props.store.tickets}
-                     deleteTicket={props.store.deleteTicket}
-                     moveToTrash={props.store.moveToTrashTicket}
-                     isTicketPage={true}
-                     updateTicket={props.store.updateTicket}/>
+            {props.store.tickets && <Tickets tickets={props.store.tickets}
+                      deleteTicket={props.store.deleteTicket}
+                      moveToTrash={props.store.moveToTrashTicket}
+                      isTicketPage={true}
+                      names={props.store.names}
+                      getUsername={props.store.getUsername}
+                      updateTicket={props.store.updateTicket}/>
+            }
         </div>
     )
 }

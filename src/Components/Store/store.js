@@ -5,6 +5,8 @@ export class Store{
     users = [];
     tickets = [];
 
+    names = new Map();
+
     deletedUsers = [];
     deletedTickets = [];
 
@@ -20,6 +22,7 @@ export class Store{
             deletedTickets: observable,
             isFetching: observable,
             newTicketValue: observable,
+            names: observable,
             setUserValue: action,
             setTicketValue: action,
             setUsers: action,
@@ -42,6 +45,7 @@ export class Store{
             unassignFromUser: action,
             restoreTicketFromRecycleBin: action,
             moveToTrashTicket: action,
+            getUsername: action,
         })
     }
 
@@ -119,6 +123,13 @@ export class Store{
         })
     }
 
+    getUsername = ticketId => {
+        this.isFetching = false;
+        userAPI.getUserByTicketId(ticketId).then(data => {
+            this.isFetching = true;
+            this.names.set(ticketId, data.name);
+        })
+    }
 
     getTickets = () => {
         this.isFetching = false;
@@ -181,8 +192,8 @@ export class Store{
         this.isFetching = false;
         ticketAPI.assignToUser(userId,ticketId).then( data => {
             this.isFetching = true;
-            data && this.getTickets();
-            data && this.getUsers();
+            this.getTickets();
+            this.getUsers();
         })
     }
 
@@ -190,10 +201,11 @@ export class Store{
         this.isFetching = false;
         ticketAPI.unassignFromUser(id).then( data => {
             this.isFetching = true;
-            data && this.getTickets();
-            data && this.getUsers();
+            this.getTickets();
+            this.getUsers();
         })
     }
+
 }
 
 

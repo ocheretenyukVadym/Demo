@@ -15,6 +15,8 @@ class RecycledTickets extends React.Component {
                          moveToTrash={this.props.store.moveToTrashTicket}
                          isTicketPage={false}
                          restore={this.props.store.restoreTicketFromRecycleBin}
+                         getUsername={this.props.store.getUsername}
+                         names={this.props.store.names}
                          updateTicket={this.props.store.updateTicket}/>
             </div>
         )
