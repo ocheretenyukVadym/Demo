@@ -4,7 +4,6 @@ import NewUserPage from './NewUserPage/NewUserPage';
 import Users from './Users/Users';
 
 const UserPageContainer = (props) =>{
-    const[isAddNewUser] = useState(true);
     useEffect(() => {
         props.store.getUsers();
     },[]);
@@ -12,9 +11,11 @@ const UserPageContainer = (props) =>{
 
         return(
             <div>
-                {isAddNewUser && <NewUserPage 
-                    createNewUser={props.store.createNewUser} />}
 
+                <div> 
+                    <NewUserPage 
+                    createNewUser={props.store.createNewUser} />
+                </div>
                 <Users users={props.store.users} 
                         deleteUser={props.store.deleteUser} 
                         moveToTrash={props.store.moveToTrash} 
