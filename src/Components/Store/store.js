@@ -37,7 +37,11 @@ export class Store{
             deleteTicket: action,
             getDeletedTickets: action,
             assignToUser: action,
+            moveToTrash: action,
             restoreUserFromRecycleBin: action,
+            unassignFromUser: action,
+            restoreTicketFromRecycleBin: action,
+
         })
     }
 
@@ -57,13 +61,14 @@ export class Store{
         this.isFetching = false;
         userAPI.getUsers().then( data => {
             this.isFetching = true;
-            this.setUsers(data);
+            data && this.setUsers(data);
         })
     }
 
     createNewUser = (data) => {
         this.isFetching = false;
         userAPI.addUser(data).then( data => {
+            data && this.getUsers();
             this.isFetching = true;
         })
     }
@@ -71,16 +76,20 @@ export class Store{
     updateUser = user => {
         this.isFetching = false;
         userAPI.updateUser(user).then( data => {
-            this.isFetching = true;
-            this.getUsers();
+            if(data){
+                this.isFetching = true;
+                data && this.getUsers();
+            }
         })
     }
 
     deleteUser = id => {
         this.isFetching = false;
         userAPI.deleteUser(id).then( data => {
-            this.isFetching = true;
-            this.getDeletedUsers();
+            if(data){
+                this.isFetching = true;
+                data && this.getDeletedUsers();
+            }
         })
     }
 
@@ -88,8 +97,8 @@ export class Store{
         this.isFetching = false;
         userAPI.moveToTrash(id).then( data => {
             this.isFetching = true;
-            this.getDeletedUsers();
-            this.getUsers();
+            data && this.getDeletedUsers();
+            data && this.getUsers();
         })
     }
 
@@ -97,7 +106,7 @@ export class Store{
         this.isFetching = false;
         userAPI.getDeletedUsers().then( data => {
             this.isFetching = true;
-            this.setDeletedUsers(data);
+            data && this.setDeletedUsers(data);
         })
     }
 
@@ -105,8 +114,8 @@ export class Store{
         this.isFetching = false;
         userAPI.restoreFromRecycleBin(id).then( data => {
             this.isFetching = true;
-            this.getDeletedUsers();
-            this.getUsers();
+            data && this.getDeletedUsers();
+            data && this.getUsers();
         })
     }
 
@@ -115,14 +124,15 @@ export class Store{
         this.isFetching = false;
         ticketAPI.getTickets().then( data => {
             this.isFetching = true;
-            this.setTickets(data);
+            data && this.setTickets(data);
         })
     }
 
     createNewTicket = (data) => {
         this.isFetching = false;
         ticketAPI.addTicket(data).then( data => {
-            this.isFetching = true;
+           this.isFetching = true;
+           data && this.getTickets();
         })
     }
 
@@ -130,7 +140,7 @@ export class Store{
         this.isFetching = false;
         ticketAPI.updateTicket(id).then( data => {
             this.isFetching = true;
-            this.getTickets();
+            data && this.getTickets();
         })
     }
 
@@ -138,7 +148,7 @@ export class Store{
         this.isFetching = false;
         ticketAPI.deleteTicket(id).then( data => {
             this.isFetching = true;
-            this.getTickets();
+            data && this.getDeletedTickets();
         })
     }
 
@@ -146,7 +156,7 @@ export class Store{
         this.isFetching = false;
         ticketAPI.getDeletedTickets().then( data => {
             this.isFetching = true;
-            this.setDeletedTickets(data);
+            data && this.setDeletedTickets(data);
         })
     }
 
@@ -154,8 +164,16 @@ export class Store{
         this.isFetching = false;
         ticketAPI.moveToTrash(id).then( data => {
             this.isFetching = true;
-            this.getDeletedTickets();
-            this.getTickets();
+            data && this.getDeletedTickets();
+            data && this.getTickets();
+        })
+    }
+    restoreTicketFromRecycleBin = id => {
+        this.isFetching = false;
+        ticketAPI.restoreFromRecycleBin(id).then( data => {
+            this.isFetching = true;
+            data && this.getDeletedUsers();
+            data && this.getUsers();
         })
     }
 
@@ -163,8 +181,17 @@ export class Store{
         this.isFetching = false;
         ticketAPI.assignToUser(userId,ticketId).then( data => {
             this.isFetching = true;
-            this.getTickets();
-            this.getUsers();
+            data && this.getTickets();
+            data && this.getUsers();
+        })
+    }
+
+    unassignFromUser = id => {
+        this.isFetching = false;
+        ticketAPI.unassignFromUser(id).then( data => {
+            this.isFetching = true;
+            data && this.getTickets();
+            data && this.getUsers();
         })
     }
 }

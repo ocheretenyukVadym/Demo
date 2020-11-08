@@ -77,8 +77,18 @@ export const ticketAPI = {
             .then(response => {
                 return response.data});},
 
+    restoreFromRecycleBin(id) {
+        return instance.post(`tickets/restore/${id}`,{})
+            .then(response => {
+                return response.data});},
+
     assignToUser(userId, ticketId) {
         return instance.post(`tickets/assign?ticketId=${ticketId}&toUserId=${userId}`) 
             .then(response => {
-                return response.data});}
+                return response.data});},
+    
+    unassignFromUser(id) {
+        return instance.post(`unassign/${id}`) 
+            .then(response => {
+                return response.data});},
 } 
