@@ -1,17 +1,21 @@
 import React from 'react';
 import './Header.scss'
 import {Link} from 'react-router-dom';
+import {inject, observer} from "mobx-react";
 
-const Header = (props) => {
+const Header = props => {
+    let isUserPage = props.store.isUserPage;
     return(
         <div className="header-container">
             <nav className="navb-light">
                 <ul className="navb-nav pages">
                     <li>
-                        <Link className="nav-item" to='/userPage'>Users</Link>
+                        { isUserPage ? <Link className="nav-item active" to='/userPage'>Users</Link> :
+                        <Link className="nav-item" to='/userPage'>Users</Link>}
                     </li>
                     <li>
-                        <Link className="nav-item" to='/ticketPage'>Tickets</Link>
+                        { !isUserPage ? <Link className="nav-item active" to='/ticketPage'>Tickets</Link> :
+                        <Link className="nav-item" to='/ticketPage'>Tickets</Link>}
                     </li>
                 </ul>
                 <ul className="navb-nav recycle-bin">
@@ -26,4 +30,4 @@ const Header = (props) => {
     )
 }
 
-export default Header;
+export default inject('store')(observer(Header));

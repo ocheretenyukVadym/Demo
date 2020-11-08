@@ -6,6 +6,7 @@ import Users from './Users/Users';
 const UserPageContainer = (props) =>{
     useEffect(() => {
         props.store.getUsers();
+        props.store.setUserPage(true);
     },[]);
 
         return(

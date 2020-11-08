@@ -27,6 +27,12 @@
                     width: 10%;
                 }
             }
+
+            .active {
+                color: yellow;
+                background-color: #7bb8f8;
+                border-radius: 9px;
+            }
         }
         .pages{
             flex: 0 0 30%;

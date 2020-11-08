@@ -14,8 +14,11 @@ export class Store{
 
     userNames = new Map();
 
+    isUserPage = true;
+
     constructor() {
         makeObservable(this, {
+            isUserPage: observable,
             users: observable,
             tickets: observable,
             deletedUsers: observable,
@@ -45,8 +48,11 @@ export class Store{
             unassignFromUser: action,
             restoreTicketFromRecycleBin: action,
             moveToTrashTicket: action,
+            setUserPage: action,
         })
     }
+
+    setUserPage = newValue => this.isUserPage = newValue;
 
     setUserValue = newValue => this.newUserValue = newValue;
 
