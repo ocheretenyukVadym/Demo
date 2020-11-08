@@ -9,7 +9,7 @@ const Tickets = (props) => {
                 props.tickets.map( ticket => {
                     return(
                         <Ticket key = {ticket.id}
-                        ticket = {ticket}
+                        ticket = {ticket} {...props}
                         />
                     )
                     })

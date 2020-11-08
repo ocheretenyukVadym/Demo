@@ -20,26 +20,25 @@ const User = ({ user, updateUser, isUserPage, moveToTrash, deleteUser }) => {
 
     return (
         <div>
-            {!isViewChanges &&
+            {!isViewChanges ?
                 <div className="user-container">
-                    <div>{user.name}</div>
                     <div className="user-menu">
-                        <div onClick={clickUpdateUser}>
-                            {isUserPage && 'update'}
-                        </div>
+                        <p>{user.name}</p>
+                        {isUserPage &&
+                            <img className='update-pen' onClick={clickUpdateUser} src='https://cdn.iconscout.com/icon/free/png-512/pencil-60-119100.png' />
+                        }
                         {isUserPage ?
-                            <div onClick={moveToRecycleBin}>X</div> :
-                            <div onClick={moveToDeletedUsers}>X</div>}
+                            <button className="delete-btn" onClick={moveToRecycleBin}>X</button> :
+                            <button className="delete-btn" onClick={moveToDeletedUsers}>X</button>}
                     </div>
-                </div>}
+                </div>
 
-            {isViewChanges &&
+            :
                 <div className="user-container">
-                    <div>
-                        <input value={inputValue} onChange={e => handlerChange(e)} />
+                    <div className="user-menu">
+                    <input className="update-input" value={inputValue} onChange={e => handlerChange(e)} />
+                    <button className="save-btn" onClick={saveUser}>save</button>
                     </div>
-                    <div onClick={saveUser}>save</div>
-
                 </div>}
         </div>
 

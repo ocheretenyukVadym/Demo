@@ -5,7 +5,15 @@ import './Users.scss';
 const Users = (props) => {
     return(
         <div className="container">
-            {props.users.map(user => <User key={user.id} user={user} {...props}/>)}
+            {
+            props.users.map(user => {
+            return(
+                <User key={user.id} 
+                user={user} {...props}
+                />
+            )
+            })
+        }  
         </div>
     )
 }

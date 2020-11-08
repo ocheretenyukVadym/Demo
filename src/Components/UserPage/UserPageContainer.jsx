@@ -22,7 +22,7 @@ const UserPageContainer = (props) =>{
                         updateUser={props.store.updateUser}/>
             </div>
         )
-
     }
+
 
 export default inject('store')(observer(UserPageContainer));

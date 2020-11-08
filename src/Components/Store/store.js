@@ -48,7 +48,7 @@ export class Store{
 
     setTickets = tickets => this.tickets = tickets;
 
-    setDeletedUsers = deletedUsers => this.deletedTickets = deletedUsers;
+    setDeletedUsers = deletedUsers => this.deletedUsers = deletedUsers;
 
     setDeletedTickets = deletedTickets => this.deletedTickets = deletedTickets;
 
@@ -127,7 +127,7 @@ export class Store{
         this.isFetching = false;
         ticketAPI.deleteTicket(id).then( data => {
             this.isFetching = true;
-            this.getTickets();
+            this.getDeletedTickets();
         })
     }
 
@@ -136,6 +136,15 @@ export class Store{
         ticketAPI.getDeletedTickets().then( data => {
             this.isFetching = true;
             this.setDeletedTickets(data);
+        })
+    }
+
+    moveToTrashTicket = id => {
+        this.isFetching = false;
+        ticketAPI.moveToTrash(id).then( data => {
+            this.isFetching = true;
+            this.getDeletedTickets();
+            this.getTickets();
         })
     }
 

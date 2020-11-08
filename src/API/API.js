@@ -26,7 +26,7 @@ export const userAPI = {
                 return response.data});},
 
     deleteUser(id) {
-        return instance.delete(`users/${id}`)
+        return instance.delete(`users?id=${id}`)
         .then(response => {
             return response.data});},
     
@@ -58,7 +58,7 @@ export const ticketAPI = {
                 return response.data});},
 
     deleteTicket(id) {
-        return instance.delete(`tickets/moveToTrash/${id}`)
+        return instance.delete(`tickets/${id}`)
             .then(response => {
                 return response.data});},
 
