@@ -11,6 +11,8 @@
   margin: 5px auto;
   border-radius: 10px;
   background-color: #fff;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .ticket-container p {
@@ -50,6 +52,7 @@
 .ticket-container .update-input {
   border-radius: 2px;
   border: 1px solid black;
+  width: 40%;
   margin: 0 0 0 10px;
   outline: 0;
 }
