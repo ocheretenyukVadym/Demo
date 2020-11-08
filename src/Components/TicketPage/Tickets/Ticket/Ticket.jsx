@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './Ticket.scss';
 
-const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, deleteTicket, restore}) => {
+const Ticket = ({ ticket, updateTicket, isTicketPage, moveToTrash, deleteTicket, restore }) => {
 
     const [isViewChanges, setIsViewChanges] = useState(false);
     const [inputValue, setInputValue] = useState(ticket.title);
     let date = new Date(ticket.createdAt);
-    function converDate(date){
+    function converDate(date) {
 
         return (`${date.getHours()}:${date.getMinutes()}  ${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`);
     }
@@ -17,7 +17,7 @@ const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, deleteTicket, 
     const restoreFromTrash = () => restore(ticket.id);
 
     const saveTicket = () => {
-        let newTicket = {...ticket};
+        let newTicket = { ...ticket };
         newTicket.title = inputValue;
         updateTicket(newTicket);
         setIsViewChanges(false);
@@ -28,7 +28,8 @@ const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, deleteTicket, 
     return (
         <div>
             {!isViewChanges ?
-                <div className="ticket-container">
+                <>
+                    <div className="ticket-container">
                         <p>{ticket.title}</p>
                         <p>{converDate(date)}</p>
                         {isTicketPage &&
@@ -37,25 +38,25 @@ const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, deleteTicket, 
                         {isTicketPage ?
                             <button className="delete-btn" onClick={moveToRecycleBin}>X</button> :
                             <button className="delete-btn" onClick={moveToDeletedTickets}>X</button>}
-                </div>
+                    </div>
+                    {/* <div className="ticket-container">
+                        {isTicketPage ? "" :
+                            <div className="restore-button" onClick={restoreFromTrash}>restore</div>
+                        }
 
-
-                    {isTicketPage ? "" :
-                        <div className="restore-button" onClick={restoreFromTrash}>restore</div>
-                    }
-
-                    <p>{ticket.title}</p>
-                    {isTicketPage &&
-                    <img className='update-pen' onClick={clickUpdateTicket}
-                         src='https://cdn.iconscout.com/icon/free/png-512/pencil-60-119100.png'/>
-                    }
-                    {isTicketPage ?
-                        <button className="delete-btn" onClick={moveToRecycleBin}>X</button> :
-                        <button className="delete-btn" onClick={moveToDeletedTickets}>X</button>}
-                </div>
+                        <p>{ticket.title}</p>
+                        {isTicketPage &&
+                            <img className='update-pen' onClick={clickUpdateTicket}
+                                src='https://cdn.iconscout.com/icon/free/png-512/pencil-60-119100.png' />
+                        }
+                        {isTicketPage ?
+                            <button className="delete-btn" onClick={moveToRecycleBin}>X</button> :
+                            <button className="delete-btn" onClick={moveToDeletedTickets}>X</button>}
+                    </div> */}
+                </>
                 :
                 <div className="ticket-container">
-                    <input className="update-input" value={inputValue} onChange={e => handlerChange(e)}/>
+                    <input className="update-input" value={inputValue} onChange={e => handlerChange(e)} />
                     <button className="save-btn" onClick={saveTicket}>save</button>
                 </div>}
         </div>
