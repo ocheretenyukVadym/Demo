@@ -5,6 +5,9 @@ import { Modal } from 'react-bootstrap';
 
 
 function MyVerticallyCenteredModal(props) {
+  
+  const _handleKeyDown = e => e.key === 'Enter' && props.submitHandler(props.name);
+
     return (
       <Modal
         {...props}
@@ -19,7 +22,7 @@ function MyVerticallyCenteredModal(props) {
         </Modal.Header>
         <Modal.Body>
         <div className="new-user-form">
-              <input className='name-inp' type="text" placeholder="Username" value={props.name} onChange={e => props.setName(e.target.value)}/>
+              <input className='name-inp' onKeyDown={_handleKeyDown} type="text" placeholder="Username" value={props.name} onChange={e => props.setName(e.target.value)}/>
              <input className='add-user-button' type="submit" value="Submit" onClick={() => props.submitHandler(props.name)}/>
            </div>
         </Modal.Body>

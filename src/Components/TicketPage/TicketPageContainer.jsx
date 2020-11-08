@@ -9,7 +9,6 @@ const TicketPageContainer = (props) => {
         props.store.getTickets();
     }, []);
 
-
     return (
         <div>
             {<NewTicketPage

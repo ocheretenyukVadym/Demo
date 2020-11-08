@@ -6,6 +6,9 @@ import { Modal } from 'react-bootstrap';
 
 
 function MyVerticallyCenteredModalTicket(props) {
+
+  const _handleKeyDown = e => e.key === 'Enter' && props.submitHandler(props.input);
+  
     return (
       <Modal
         {...props}
@@ -20,7 +23,7 @@ function MyVerticallyCenteredModalTicket(props) {
         </Modal.Header>
         <Modal.Body>
         <div className="new-ticket-form">
-              <input className='title-input' type="text" placeholder="Ticket" value={props.input} onChange={e => props.setInput(e.target.value)}/>
+              <input className='title-input' onKeyDown={_handleKeyDown} type="text" placeholder="Ticket" value={props.input} onChange={e => props.setInput(e.target.value)}/>
              <input className='add-button' type="submit" value="Submit" onClick={() => props.submitHandler(props.input)}/>
            </div>
         </Modal.Body>
