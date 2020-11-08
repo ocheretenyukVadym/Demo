@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import RecycledUsers from "./RecycledUsers/RecycledUsers";
 import RecycledTickets from "./RecycledTickets/RecycledTickets";
 import { Route, useHistory, useRouteMatch } from "react-router-dom";
@@ -9,6 +9,9 @@ const RecycleBinContainer = () => {
     const { url } = useRouteMatch();
     let history = useHistory();
     
+    useEffect(() => {
+        setSelectedUsers(true);
+    },[])
 
     const clickOnUsers = () => {
         setSelectedUsers(true);
