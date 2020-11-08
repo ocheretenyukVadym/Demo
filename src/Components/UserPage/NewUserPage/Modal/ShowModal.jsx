@@ -11,7 +11,7 @@ import './ShowModal.scss'
     return (
       <>
         <Button variant="primary" id="add-user-btn" onClick={() => setModalShow(true)}>
-            AddUser
+            Add User
         </Button>
   
         <MyVerticallyCenteredModal
