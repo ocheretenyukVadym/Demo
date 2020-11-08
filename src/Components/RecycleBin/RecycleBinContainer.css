@@ -1,35 +1,3 @@
-.switch-toggle {
-  float: left;
-  background: #6aa7f7;
-  border-radius: 20px;
-  height: 38px;
-}
-
-.switch-toggle input {
-  position: absolute;
-  opacity: 0;
-}
-
-.switch-toggle input + label {
-  padding: 7px;
-  float: left;
-  color: #fff;
-  cursor: pointer;
-}
-
-.switch-toggle input:checked + label {
-  background: #167bff;
-  border-radius: 20px;
-}
-
-.switch-block label {
-  cursor: pointer;
-}
-
-.switch-block {
-  text-align: center;
-}
-
 .recycle-bin-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -40,12 +8,35 @@
           flex-direction: column;
 }
 
-.top-switches {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.recycle-bin-container .top-switches {
+  margin: 0 auto;
+}
+
+.recycle-bin-container .top-switches .switch-toggle {
+  float: left;
+  background: #6aa7f7;
+  border-radius: 10px;
+}
+
+.recycle-bin-container .top-switches .switch-toggle input {
+  position: absolute;
+  opacity: 0;
+}
+
+.recycle-bin-container .top-switches .switch-toggle input + label {
+  padding: 7px;
+  float: left;
+  color: #fff;
+  cursor: pointer;
+}
+
+.recycle-bin-container .top-switches .switch-toggle input:checked + label {
+  background: #167bff;
+  border-radius: 10px;
+}
+
+.recycle-bin-container .top-switches .switch-toggle label {
+  cursor: pointer;
+  margin: 0;
 }
 /*# sourceMappingURL=RecycleBinContainer.css.map */

@@ -1,0 +1,29 @@
+.add-user-button{
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+    background-color: #167bff;
+    border: none;
+    display: block;
+    border-radius: 30px;
+    margin: 10px auto;
+    outline: 0;
+    cursor: pointer;
+}
+
+.new-user-form{
+    display: flex;
+    flex-direction: column;
+        
+}
+.name-inp{
+    height: 30px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    margin: 0 auto;
+    outline: 0;
+    text-align: center;
+    border: 1px solid #167bff;
+}

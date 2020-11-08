@@ -10,7 +10,7 @@ const RecycleBinContainer = () => {
     let history = useHistory();
     
     useEffect(() => {
-        if(history.location.pathname === "/recycleBin/users") setSelected(true)
+        history.location.pathname === "/recycleBin/users"? setSelected(true) : setSelected(false);
     }, )
 
     const clickOnUsers = () => {
@@ -29,10 +29,10 @@ const RecycleBinContainer = () => {
                 <div className="switch-block">
                     <div className="switch-toggle">
 
-                        <input id='radio1' name="switch" type="radio" checked={selected}  />
+                        <input id='radio1' name="switch" type="radio" onChange={() => {}} checked={selected}  />
                         <label for='radio1t' onClick={clickOnUsers}>Users</label>
 
-                        <input id="radio2"  name="switch" type="radio" />
+                        <input id="radio2"  name="switch" type="radio" checked={!selected}/>
                         <label for="radio2" onClick={clickOnTickets}>Tickets</label>
                     </div>
                 </div>
