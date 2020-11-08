@@ -16,7 +16,7 @@ const Header = (props) => {
                 </ul>
                 <ul className="navbar-nav recycle-bin">
                     <li>
-                        <Link className="nav-item" to='/recycleBin'>
+                        <Link className="nav-item" to='/recycleBin/users'>
                             <img className ="header-ico" src="https://flaticons.net/icon.php?slug_category=mobile-application&slug_icon=recycle-bin" alt=""/>
                         </Link>
                     </li>

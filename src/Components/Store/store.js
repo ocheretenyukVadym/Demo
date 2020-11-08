@@ -127,7 +127,7 @@ export class Store{
         this.isFetching = false;
         ticketAPI.deleteTicket(id).then( data => {
             this.isFetching = true;
-            this.getTickets();
+            this.getDeletedTickets();
         })
     }
 

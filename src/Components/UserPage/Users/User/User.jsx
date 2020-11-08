@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './User.scss';
+import './User.css';
 
 const User = ({ user, updateUser, isUserPage, moveToTrash, deleteUser }) => {
     const [isViewChanges, setIsViewChanges] = useState(false);
@@ -35,9 +35,10 @@ const User = ({ user, updateUser, isUserPage, moveToTrash, deleteUser }) => {
 
             :
                 <div className="user-container">
+                    <div className="user-menu">
                     <input className="update-input" value={inputValue} onChange={e => handlerChange(e)} />
                     <button className="save-btn" onClick={saveUser}>save</button>
-
+                    </div>
                 </div>}
         </div>
 
