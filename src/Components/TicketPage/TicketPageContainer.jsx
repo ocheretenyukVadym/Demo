@@ -6,7 +6,7 @@ import Tickets from './Tickets/Tickets';
 
 const TicketPageContainer = (props) =>{
     useEffect(() => {
-        props.store.getUsers();
+        props.store.getTickets();
     },[]);
 
 
