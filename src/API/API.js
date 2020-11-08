@@ -26,7 +26,7 @@ export const userAPI = {
                 return response.data});},
 
     deleteUser(id) {
-        return instance.delete(`users/${id}`)
+        return instance.delete(`users?id=${id}`)
         .then(response => {
             return response.data});},
     

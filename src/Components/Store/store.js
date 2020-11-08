@@ -48,7 +48,7 @@ export class Store{
 
     setTickets = tickets => this.tickets = tickets;
 
-    setDeletedUsers = deletedUsers => this.deletedTickets = deletedUsers;
+    setDeletedUsers = deletedUsers => this.deletedUsers = deletedUsers;
 
     setDeletedTickets = deletedTickets => this.deletedTickets = deletedTickets;
 
