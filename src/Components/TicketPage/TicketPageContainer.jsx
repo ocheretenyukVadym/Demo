@@ -8,7 +8,7 @@ const TicketPageContainer = (props) => {
         props.store.getUsers();
         props.store.getTickets();
         props.store.getUserNames();
-        props.store.setUserPage(false);
+        props.store.setUserPage(2);
     }, []);
 
      return props.store.users ? (

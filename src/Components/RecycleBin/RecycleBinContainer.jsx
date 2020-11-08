@@ -3,15 +3,17 @@ import RecycledUsers from "./RecycledUsers/RecycledUsers";
 import RecycledTickets from "./RecycledTickets/RecycledTickets";
 import { Route, useHistory, useRouteMatch } from "react-router-dom";
 import './RecycleBinContainer.css'
+import {inject, observer} from "mobx-react";
 
-const RecycleBinContainer = () => {
+const RecycleBinContainer = props => {
     const [selected, setSelected] = useState(true);
     const { url } = useRouteMatch();
     let history = useHistory();
     
     useEffect(() => {
         history.location.pathname === "/recycleBin/users"? setSelected(true) : setSelected(false);
-    }, )
+        props.store.setUserPage(3);
+    }, [])
 
     const clickOnUsers = () => {
         setSelected(true);
@@ -44,4 +46,4 @@ const RecycleBinContainer = () => {
     )
 }
 
-export default RecycleBinContainer;
+export default inject('store')(observer(RecycleBinContainer));
