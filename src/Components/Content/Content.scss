@@ -6,3 +6,15 @@
     background:rgb(225, 234, 252);
     border-radius: 10px;
 }
+
+@media screen and(max-width: 990px){
+    .content-container{
+        width:80%;
+    }
+}
+
+@media screen and(max-width: 480px){
+    .content-container{
+        width:100%;
+    }
+}

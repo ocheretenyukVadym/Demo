@@ -38,8 +38,12 @@ const User = ({user, updateUser, isUserPage, moveToTrash, deleteUser, restore}) 
                             <img className='update-pen' onClick={clickUpdateUser} src='https://cdn.iconscout.com/icon/free/png-512/pencil-60-119100.png' />
                         }
                         {isUserPage ?
-                            <button className="delete-btn" onClick={moveToRecycleBin}>X</button> :
-                            <button className="delete-btn" onClick={moveToDeletedUsers}>X</button>}
+                            <button className="delete-btn" onClick={moveToRecycleBin}>
+                                <img src="https://lh3.googleusercontent.com/proxy/OF10tCa-I2uSxpXBRaoL6-ByM0np0a3WtP0dvqujpqouhJCt3mkidH76eZ035yNPRAfSUgZcYmWApW0W7RIUMTwJ4wy3BzaJmr-095CHcHjrM1NPDnj3xZoyUSNQxRlyT9xf65RH"/>
+                            </button> :
+                            <button className="delete-btn" onClick={moveToDeletedUsers}>
+                                <img src="https://lh3.googleusercontent.com/proxy/OF10tCa-I2uSxpXBRaoL6-ByM0np0a3WtP0dvqujpqouhJCt3mkidH76eZ035yNPRAfSUgZcYmWApW0W7RIUMTwJ4wy3BzaJmr-095CHcHjrM1NPDnj3xZoyUSNQxRlyT9xf65RH"/>
+                            </button>}
                 </div>
 
                 {isShowTickets && <AllTicketsByUser tickets={user.tickets} userId={user.id}/>}
