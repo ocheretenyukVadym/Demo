@@ -1,16 +1,16 @@
-.container{
+.header-container{
     width:60%;
     height: auto;
     margin: 20px auto;
     padding: 20px;
-    background: rgba(22, 123, 255,1);
+    background: rgb(155, 185, 247);
     border-radius: 10px;
-
-    .navbar-light{
+    .navb-light{
         display: flex;
         justify-content: space-around;
-
-        .navbar-nav{
+        align-items: center;
+        margin: 0;
+        .navb-nav{
             display: flex;
             justify-content: space-between;
             list-style-type: none;
@@ -28,8 +28,12 @@
             
         }
         .pages{
-            position: relative;
             flex: 0 0 30%;
+            margin: 0;
+        }
+        .recycle-bin{
+            flex: 0 0 auto;
+            margin: 0;
         }
     }
 }

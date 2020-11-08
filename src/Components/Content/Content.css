@@ -1,9 +1,9 @@
-.container {
+.content-container {
   width: 60%;
-  height: 100vh;
+  height: auto;
   margin: 20px auto;
   padding: 10px 20px;
-  background: #167bff;
+  background: #e1eafc;
   border-radius: 10px;
 }
 /*# sourceMappingURL=Content.css.map */

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyVerticallyCenteredModal from './MyVerticallyCenteredModal';
+import './ShowModal.scss'
 
 
   function App(props) {
@@ -9,7 +10,7 @@ import MyVerticallyCenteredModal from './MyVerticallyCenteredModal';
   
     return (
       <>
-        <Button variant="primary" onClick={() => setModalShow(true)}>
+        <Button variant="primary" id="add-user-btn" onClick={() => setModalShow(true)}>
             AddUser
         </Button>
   

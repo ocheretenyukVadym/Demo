@@ -6,10 +6,10 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   border: 1px solid black;
+  width: 60%;
   padding: 5px;
   margin: 5px auto;
   border-radius: 10px;
-
   background-color: #fff;
 }
 
@@ -20,52 +20,43 @@
   margin: 0 0 0 10px;
 }
 
-.user-container .user-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0 5px;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-.user-container .user-menu .update-pen {
+.user-container .update-pen {
   width: 5%;
   cursor: pointer;
 }
 
-.user-container .user-menu .delete-btn {
+.user-container .delete-btn {
   padding: 0 5px;
-  background-color: rgba(255, 0, 0, 0);
+  background-color: red;
   border: 0;
   border-radius: 2px;
-  color: #000;
+  color: #fff;
   cursor: pointer;
   outline: 0;
 }
 
-.user-container .user-menu .delete-btn:active {
-  background-color: red;
+.user-container .delete-btn:active {
+  background-color: #c80000;
 }
 
 .user-container .update-input {
   border-radius: 2px;
   border: 1px solid black;
+  margin: 0 0 0 10px;
   outline: 0;
+  margin: 0 0 0 15px;
 }
 
 .user-container .update-input:focus {
-  border: 1px solid green;
+  border: 1px solid #7DB32E;
 }
 
 .user-container .save-btn {
   padding: 5px 10px;
-  background-color: rgba(255, 0, 0, 0);
+  background-color: #7DB32E;
   border: 0;
   border-radius: 2px;
-  color: #000;
+  color: #fff;
   cursor: pointer;
   outline: 0;
 }

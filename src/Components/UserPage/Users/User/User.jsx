@@ -22,7 +22,6 @@ const User = ({ user, updateUser, isUserPage, moveToTrash, deleteUser }) => {
         <div>
             {!isViewChanges ?
                 <div className="user-container">
-                    <div className="user-menu">
                         <p>{user.name}</p>
                         {isUserPage &&
                             <img className='update-pen' onClick={clickUpdateUser} src='https://cdn.iconscout.com/icon/free/png-512/pencil-60-119100.png' />
@@ -30,15 +29,12 @@ const User = ({ user, updateUser, isUserPage, moveToTrash, deleteUser }) => {
                         {isUserPage ?
                             <button className="delete-btn" onClick={moveToRecycleBin}>X</button> :
                             <button className="delete-btn" onClick={moveToDeletedUsers}>X</button>}
-                    </div>
                 </div>
 
             :
                 <div className="user-container">
-                    <div className="user-menu">
                     <input className="update-input" value={inputValue} onChange={e => handlerChange(e)} />
                     <button className="save-btn" onClick={saveUser}>save</button>
-                    </div>
                 </div>}
         </div>
 

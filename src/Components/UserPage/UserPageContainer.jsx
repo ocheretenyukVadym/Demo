@@ -9,12 +9,10 @@ const UserPageContainer = (props) =>{
     },[]);
 
         return(
-            <div>
-
-                <div> 
-                    <NewUserPage 
+            <div className="container">
+                <NewUserPage 
                     createNewUser={props.store.createNewUser} />
-                </div>
+
                 <Users users={props.store.users} 
                         deleteUser={props.store.deleteUser} 
                         moveToTrash={props.store.moveToTrash} 
