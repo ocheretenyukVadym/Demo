@@ -1,8 +1,9 @@
+
 import React, { useState } from 'react';
 import AllTicketsByUser from './TicketsByUser/AllTicketsByUser';
 import './User.css';
 
-const User = ({ user, updateUser, isUserPage, moveToTrash, deleteUser }) => {
+const User = ({user, updateUser, isUserPage, moveToTrash, deleteUser, restore}) => {
     const [isViewChanges, setIsViewChanges] = useState(false);
     const [inputValue, setInputValue] = useState(user.name);
     const [isShowTickets, setIsShowTickets] = useState(false);
@@ -11,12 +12,13 @@ const User = ({ user, updateUser, isUserPage, moveToTrash, deleteUser }) => {
     const handlerChange = e => setInputValue(e.target.value);
     const moveToRecycleBin = () => moveToTrash(user.id);
     const moveToDeletedUsers = () => deleteUser(user.id);
+    const restoreFromTrash = () => restore(user.id);
 
     const isPresentTickets = () => user.tickets.length != 0;
 
     const showTicketslist = () => {isShowTickets? setIsShowTickets(false) : setIsShowTickets(true)}
     const saveUser = () => {
-        let newUser = { ...user };
+        let newUser = {...user};
         newUser.name = inputValue;
         updateUser(newUser);
         setIsViewChanges(false);
@@ -44,7 +46,7 @@ const User = ({ user, updateUser, isUserPage, moveToTrash, deleteUser }) => {
                 </>
             :
                 <div className="user-container">
-                    <input className="update-input" value={inputValue} onChange={e => handlerChange(e)} />
+                    <input className="update-input" value={inputValue} onChange={e => handlerChange(e)}/>
                     <button className="save-btn" onClick={saveUser}>save</button>
                 </div>}
         </div>

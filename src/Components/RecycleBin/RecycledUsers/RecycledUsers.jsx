@@ -14,6 +14,7 @@ class RecycledUsers extends React.Component{
                        deleteUser={this.props.store.deleteUser}
                        moveToTrash={this.props.store.moveToTrash}
                        isUserPage={false}
+                       restore={this.props.store.restoreUserFromRecycleBin}
                        updateUser={this.props.store.updateUser}/>
             </div>
         )
