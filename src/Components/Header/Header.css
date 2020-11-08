@@ -51,6 +51,10 @@
   margin: 0;
 }
 
+.header-container .navb-light .pages li a {
+  margin: 0px 5px;
+}
+
 .header-container .navb-light .recycle-bin {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;

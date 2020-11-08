@@ -1,37 +1,33 @@
-.user-container {
+.ticket {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 45%;
   border: 1px solid black;
-  width: 60%;
   padding: 5px;
   margin: 5px auto;
   border-radius: 10px;
   background-color: #fff;
 }
 
-.user-container p {
+.ticket p {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   margin: 0 0 0 10px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 
-.user-container .update-pen {
+.ticket .update-pen {
   width: 5%;
   cursor: pointer;
 }
 
-.user-container .delete-btn {
+.ticket .delete-btn {
   padding: 0 5px;
-  background-color: red;
+  background-color: #ff8800;
   border: 0;
   border-radius: 2px;
   color: #fff;
@@ -39,11 +35,11 @@
   outline: 0;
 }
 
-.user-container .delete-btn:active {
+.ticket .delete-btn:active {
   background-color: #c80000;
 }
 
-.user-container .update-input {
+.ticket .update-input {
   border-radius: 2px;
   border: 1px solid black;
   margin: 0 0 0 10px;
@@ -51,11 +47,11 @@
   margin: 0 0 0 15px;
 }
 
-.user-container .update-input:focus {
+.ticket .update-input:focus {
   border: 1px solid #7DB32E;
 }
 
-.user-container .save-btn {
+.ticket .save-btn {
   padding: 5px 10px;
   background-color: #7DB32E;
   border: 0;
@@ -65,14 +61,7 @@
   outline: 0;
 }
 
-.user-container .save-btn:active {
+.ticket .save-btn:active {
   background-color: #00c800;
 }
-
-.user-container span {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-/*# sourceMappingURL=User.css.map */
+/*# sourceMappingURL=TicketsByUser.css.map */
