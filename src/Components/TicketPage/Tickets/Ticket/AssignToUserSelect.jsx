@@ -1,7 +1,6 @@
 import { inject, observer } from 'mobx-react';
 import React from 'react';
 import Select from 'react-select'
-
 const AssignToUserSelect = ({ store, ticketId }) => {
     const options = [];
 
@@ -17,9 +16,9 @@ const AssignToUserSelect = ({ store, ticketId }) => {
     })()
 
     return (
-        <div style={{display: 'flex'}}>
+        <div className="assign-user-container" style={{display: 'flex'}}>
             <Select isLoading={!store.isFetching} options={options} onChange={ user => 
-                    assignToUser(user.value)} styles={customStyles}  width='200px'/>
+                    assignToUser(user.value)} styles={customStyles} />
         </div>
     )
 }
@@ -29,7 +28,6 @@ export default inject("store")(observer(AssignToUserSelect))
 const customStyles = {
     menu: (provided, state) => ({
       ...provided,
-      width: state.selectProps.width,
       borderBottom: '1px dotted pink',
       color: state.selectProps.menuColor,
       padding: 20,
@@ -45,11 +43,9 @@ const customStyles = {
         }
     }),
   
-    control: (_, { selectProps: { width }}) => ({
-      width: width,
+    control: (_, { selectProps: {  }}) => ({
       display: 'flex',
       border: '1px solid #dbdbdb',
-      
     }),
   
     singleValue: (provided, state) => {
