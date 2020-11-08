@@ -1,15 +1,15 @@
-import { inject, observer } from 'mobx-react';
-import React, { useEffect, useState } from 'react';
+
+import {inject, observer} from 'mobx-react';
+import React, {useEffect} from 'react';
 import NewTicketPage from './NewTicketPage/NewTicketPage';
 import './TicketPageContainer.scss';
 import Tickets from './Tickets/Tickets';
 
-const TicketPageContainer = (props) =>{
+const TicketPageContainer = (props) => {
     useEffect(() => {
         props.store.getTickets();
-    },[]);
-
-
+    }, []);
+  
         return(
             <div className="container">
                 <NewTicketPage 
@@ -22,6 +22,7 @@ const TicketPageContainer = (props) =>{
                     updateTicket={props.store.updateTicket}/>
             </div>
         )
+
 }
 
 export default inject('store')(observer(TicketPageContainer));
