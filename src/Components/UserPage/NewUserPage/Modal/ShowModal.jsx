@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyVerticallyCenteredModal from './MyVerticallyCenteredModal';
@@ -11,7 +11,7 @@ import './ShowModal.scss'
     return (
       <>
         <Button variant="primary" id="add-user-btn" onClick={() => setModalShow(true)}>
-            AddUser
+            Add User
         </Button>
   
         <MyVerticallyCenteredModal

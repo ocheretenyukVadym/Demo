@@ -1,11 +1,11 @@
-.ticket-container {
+.ticket {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 60%;
+  width: 45%;
   border: 1px solid black;
   padding: 5px;
   margin: 5px auto;
@@ -13,62 +13,55 @@
   background-color: #fff;
 }
 
-.ticket-container p {
+.ticket p {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   margin: 0 0 0 10px;
 }
 
-.ticket-container .update-pen {
-  width: 25px;
+.ticket .update-pen {
+  width: 5%;
   cursor: pointer;
 }
 
-.ticket-container .delete-btn {
+.ticket .delete-btn {
   padding: 0 5px;
-  background-color: rgba(255, 0, 0, 0);
+  background-color: #ff8800;
   border: 0;
   border-radius: 2px;
   color: #fff;
   cursor: pointer;
   outline: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-.ticket-container .delete-btn img {
-  width: 25px;
-  margin: 0;
-  padding: 0;
+.ticket .delete-btn:active {
+  background-color: #c80000;
 }
 
-.ticket-container .update-input {
+.ticket .update-input {
   border-radius: 2px;
   border: 1px solid black;
   margin: 0 0 0 10px;
   outline: 0;
+  margin: 0 0 0 15px;
 }
 
-.ticket-container .update-input:focus {
+.ticket .update-input:focus {
   border: 1px solid #7DB32E;
 }
 
-.ticket-container .save-btn {
+.ticket .save-btn {
   padding: 5px 10px;
   background-color: #7DB32E;
   border: 0;
-  border-radius: 5px;
+  border-radius: 2px;
   color: #fff;
   cursor: pointer;
   outline: 0;
 }
 
-.ticket-container .save-btn:active {
+.ticket .save-btn:active {
   background-color: #00c800;
 }
-/*# sourceMappingURL=Ticket.css.map */
+/*# sourceMappingURL=TicketsByUser.css.map */

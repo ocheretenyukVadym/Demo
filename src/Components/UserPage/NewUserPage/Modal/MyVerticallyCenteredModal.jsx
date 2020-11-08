@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal } from 'react-bootstrap';
@@ -27,7 +27,7 @@ function MyVerticallyCenteredModal(props) {
            </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
+          <Button className="close-btn" onClick={props.onHide}>Close</Button>
         </Modal.Footer>
       </Modal>
     );

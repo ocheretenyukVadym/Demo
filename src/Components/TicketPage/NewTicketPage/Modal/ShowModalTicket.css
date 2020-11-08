@@ -1,4 +1,4 @@
-#add-user-btn {
+#add-ticket-btn {
   display: block;
   width: 60%;
   margin: 20px auto;
@@ -6,7 +6,7 @@
   border-color: #b0c8f8;
 }
 
-#add-user-btn:hover {
+#add-ticket-btn:hover {
   background-color: #7e96c8;
 }
-/*# sourceMappingURL=ShowModal.css.map */
+/*# sourceMappingURL=ShowModalTicket.css.map */
