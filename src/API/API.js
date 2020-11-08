@@ -58,7 +58,7 @@ export const ticketAPI = {
                 return response.data});},
 
     updateTicket(ticket) {
-        return instance.put(`tickets/${ticket.id}`, ticket)
+        return instance.put(`tickets`, ticket)
             .then(response => {
                 return response.data});},
 

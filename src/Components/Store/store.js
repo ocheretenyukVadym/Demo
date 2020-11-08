@@ -41,7 +41,7 @@ export class Store{
             restoreUserFromRecycleBin: action,
             unassignFromUser: action,
             restoreTicketFromRecycleBin: action,
-
+            moveToTrashTicket: action,
         })
     }
 
@@ -164,8 +164,8 @@ export class Store{
         this.isFetching = false;
         ticketAPI.moveToTrash(id).then( data => {
             this.isFetching = true;
-            data && this.getDeletedTickets();
-            data && this.getTickets();
+            this.getDeletedTickets();
+            this.getTickets();
         })
     }
     restoreTicketFromRecycleBin = id => {
