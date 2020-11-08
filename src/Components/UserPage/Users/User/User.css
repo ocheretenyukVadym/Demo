@@ -18,6 +18,10 @@
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   margin: 0 0 0 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .user-container .update-pen {
@@ -70,5 +74,12 @@
 
 .user-container .save-btn:active {
   background-color: #00c800;
+}
+
+.user-container span {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 /*# sourceMappingURL=User.css.map */

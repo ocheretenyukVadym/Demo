@@ -8,10 +8,10 @@ const Header = (props) => {
             <nav className="navb-light">
                 <ul className="navb-nav pages">
                     <li>
-                        <Link className="nav-item" to='/userPage'>Users</Link>
+                        <Link className="nav-item" to='/userPage'>👥Users</Link>
                     </li>
                     <li>
-                        <Link className="nav-item" to='/ticketPage'>Tickets</Link>
+                        <Link className="nav-item" to='/ticketPage'>🎫Tickets</Link>
                     </li>
                 </ul>
                 <ul className="navb-nav recycle-bin">
