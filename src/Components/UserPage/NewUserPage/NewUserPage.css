@@ -2,13 +2,18 @@
   width: 100px;
   height: 30px;
   margin: 10px;
-  background-color: #167bff;
+  background-color: #b0c8f8;
+  color: #fff;
   border: none;
   display: block;
-  border-radius: 30px;
+  border-radius: 5px;
   margin: 10px auto;
   outline: 0;
   cursor: pointer;
+}
+
+.add-user-button:hover {
+  background-color: #7e96c8;
 }
 
 .new-user-form {
@@ -30,6 +35,19 @@
   margin: 0 auto;
   outline: 0;
   text-align: center;
-  border: 1px solid #167bff;
+  border: 1px solid #b0c8f8;
+}
+
+.name-inp:hover, .name-inp:focus {
+  border: 1px solid #7DB32E;
+}
+
+.close-btn {
+  background-color: #b0c8f8;
+  border: none;
+}
+
+.close-btn:hover {
+  background-color: #7e96c8;
 }
 /*# sourceMappingURL=NewUserPage.css.map */

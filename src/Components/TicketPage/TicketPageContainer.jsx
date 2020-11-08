@@ -11,10 +11,10 @@ const TicketPageContainer = (props) =>{
 
 
         return(
-            <div>
-                {<NewTicketPage 
+            <div className="container">
+                <NewTicketPage 
                     createNewTicket={props.store.createNewTicket}
-                />}
+                />
                 <Tickets tickets = {props.store.tickets}
                     deleteTicket={props.store.deleteTicket} 
                     moveToTrash={props.store.moveToTrashTicket} 

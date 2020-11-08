@@ -5,11 +5,13 @@
     padding: 20px;
     background: rgb(155, 185, 247);
     border-radius: 10px;
+    
     .navb-light{
         display: flex;
         justify-content: space-around;
         align-items: center;
         margin: 0;
+
         .navb-nav{
             display: flex;
             justify-content: space-between;
@@ -25,7 +27,6 @@
                     width: 10%;
                 }
             }
-            
         }
         .pages{
             flex: 0 0 30%;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './NewTicketPage.css'
+import './NewTicketPage.css';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './Modal/ShowModalTicket';

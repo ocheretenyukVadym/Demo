@@ -1,8 +1,8 @@
 .user-container{
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
     width: 60%;
+    border: 1px solid black;
     padding: 5px;
     margin: 5px auto;
     border-radius: 10px;
@@ -14,27 +14,30 @@
     }
     
         .update-pen{
-            width: 5%;
+            width: 25px;
             cursor: pointer;
         }
         .delete-btn{
             padding: 0 5px;
-            background-color: rgba(255,0,0,1);
+            background-color: rgba(255,0,0,0);
             border: 0;
             border-radius: 2px;
             color: #fff;
             cursor: pointer;
             outline: 0;
+            display: flex;
+            align-items: center;
         }
-        .delete-btn:active{
-            background-color: rgba(200, 0, 0,1);
+        .delete-btn img{
+            width:25px;
+            margin: 0;
+            padding: 0;
         }
     .update-input{
         border-radius: 2px;
         border: 1px solid black;
         margin: 0 0 0 10px;
         outline: 0;
-        margin: 0 0 0 15px;
     }
     .update-input:focus{
         border: 1px solid #7DB32E;
@@ -43,7 +46,7 @@
         padding: 5px 10px;
         background-color:#7DB32E;
         border: 0;
-        border-radius: 2px;
+        border-radius: 5px;
         color: #fff;
         cursor: pointer;
         outline: 0;
