@@ -6,10 +6,11 @@ import Tickets from './Tickets/Tickets';
 
 const TicketPageContainer = (props) => {
     useEffect(() => {
+        props.store.getUsers();
         props.store.getTickets();
     }, []);
 
-    return (
+     return props.store.users ? (
         <div>
             {<NewTicketPage
                 createNewTicket={props.store.createNewTicket}
@@ -18,12 +19,11 @@ const TicketPageContainer = (props) => {
                      deleteTicket={props.store.deleteTicket}
                      moveToTrash={props.store.moveToTrashTicket}
                      isTicketPage={true}
-                     names={props.store.names}
                      getUsername={props.store.getUsername}
                      updateTicket={props.store.updateTicket}/>
 
         </div>
-    )
+    ) : (<div></div>)
 }
 
 export default inject('store')(observer(TicketPageContainer));

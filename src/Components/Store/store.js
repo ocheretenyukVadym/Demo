@@ -5,8 +5,6 @@ export class Store{
     users = [];
     tickets = [];
 
-    names = new Map();
-
     deletedUsers = [];
     deletedTickets = [];
 
@@ -22,7 +20,6 @@ export class Store{
             deletedTickets: observable,
             isFetching: observable,
             newTicketValue: observable,
-            names: observable,
             setUserValue: action,
             setTicketValue: action,
             setUsers: action,
@@ -124,9 +121,12 @@ export class Store{
 
     getUsername = ticketId => {
         this.isFetching = false;
-        userAPI.getUserByTicketId(ticketId).then(data => {
-            this.isFetching = true;
-            this.names.set(ticketId, data.name);
+        this.users.forEach(u => {
+            u.tickets.forEach(t => {
+                if (ticketId === t.id) {
+                    return u.name;
+                }
+            })
         })
     }
 

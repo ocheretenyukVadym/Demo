@@ -30,6 +30,9 @@ const User = ({user, updateUser, isUserPage, moveToTrash, deleteUser, restore}) 
             {!isViewChanges ?
                 <>
                 <div className="user-container">
+                    {isUserPage ? "" :
+                        <div className="restore-button" onClick={restoreFromTrash}>restore</div>
+                    }
                     {isUserPage && isPresentTickets() && <span onClick={showTicketslist}>🎫</span>}
                         <p className="user-name" onClick={showTicketslist}>
                             {user.name}
