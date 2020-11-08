@@ -97,8 +97,7 @@ export class Store{
         this.isFetching = false;
         userAPI.moveToTrash(id).then( data => {
             this.isFetching = true;
-            data && this.getDeletedUsers();
-            data && this.getUsers();
+            this.getUsers();
         })
     }
 
