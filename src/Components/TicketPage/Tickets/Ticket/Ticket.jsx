@@ -18,7 +18,7 @@ const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, userNames, del
     const moveToRecycleBin = () => moveToTrash(ticket.id);
     const moveToDeletedTickets = () => deleteTicket(ticket.id);
     const restoreFromTrash = () => restore(ticket.id);
-    const getUserName = () => userNames.get(ticket.id)? userNames.get(ticket.id) : '';
+    const getUserName = () => userNames.get(ticket.id) ? userNames.get(ticket.id) : '';
     const saveTicket = () => {
         let newTicket = {...ticket};
         newTicket.title = inputValue;

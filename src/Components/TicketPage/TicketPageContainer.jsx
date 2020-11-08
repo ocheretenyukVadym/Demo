@@ -8,6 +8,7 @@ const TicketPageContainer = (props) => {
     useEffect(() => {
         props.store.getUsers();
         props.store.getTickets();
+        props.store.getUserNames();
     }, []);
 
      return props.store.users ? (
@@ -20,7 +21,6 @@ const TicketPageContainer = (props) => {
                      moveToTrash={props.store.moveToTrashTicket}
                      isTicketPage={true}
                      userNames={props.store.userNames}
-                     getUsername={props.store.getUsername}
                      updateTicket={props.store.updateTicket}/>
 
         </div>
