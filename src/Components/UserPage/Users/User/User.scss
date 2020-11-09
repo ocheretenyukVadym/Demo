@@ -7,6 +7,7 @@
     margin: 5px auto;
     border-radius: 10px;
     background-color: #fff;
+    flex-wrap: wrap;
 
     p{
         flex: 1 1 auto;
@@ -36,6 +37,7 @@
         }
     .update-input{
         border-radius: 2px;
+        width: 40%;
         border: 1px solid black;
         margin: 0 0 0 10px;
         outline: 0;
