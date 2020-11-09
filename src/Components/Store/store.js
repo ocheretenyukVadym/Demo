@@ -12,6 +12,8 @@ export class Store{
 
     newTicketValue = '';
 
+    userNames = new Map();
+
     constructor() {
         makeObservable(this, {
             users: observable,
@@ -20,6 +22,7 @@ export class Store{
             deletedTickets: observable,
             isFetching: observable,
             newTicketValue: observable,
+            userNames: observable,
             setUserValue: action,
             setTicketValue: action,
             setUsers: action,
@@ -58,11 +61,20 @@ export class Store{
 
     setDeletedTickets = deletedTickets => this.deletedTickets = deletedTickets;
 
+    getUserNames(users){
+        users.forEach(user => {
+            user.tickets.forEach(ticket => {
+                this.userNames.set(ticket.id, user.name)
+            })
+        })
+    }
+
     getUsers = () => {
         this.isFetching = false;
         userAPI.getUsers().then( data => {
             this.isFetching = true;
             data && this.setUsers(data);
+            data && this.getUserNames(data);
         })
     }
 

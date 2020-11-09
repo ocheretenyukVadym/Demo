@@ -80,4 +80,14 @@
 .ticket-container .save-btn:active {
   background-color: #00c800;
 }
+
+.ticket-container .username {
+  font-style: italic;
+  font-size: 80%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
 /*# sourceMappingURL=Ticket.css.map */

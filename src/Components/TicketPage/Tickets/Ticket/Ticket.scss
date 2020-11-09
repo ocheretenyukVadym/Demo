@@ -7,13 +7,14 @@
     margin: 5px auto;
     border-radius: 10px;
     background-color: #fff;
-    flex-wrap: wrap;
+  
     .restore-button{
         width: 25px;
         cursor: pointer;
     }
     p{
         flex: 1 1 auto;
+        flex-wrap: wrap;
         margin: 0 0 0 10px;
     }
 
@@ -26,7 +27,6 @@
             background-color: rgba(255,0,0,0);
             border: 0;
             border-radius: 2px;
-            color: #fff;
             cursor: pointer;
             outline: 0;
             display: flex;
@@ -60,5 +60,11 @@
     }
     .save-btn:active{
         background-color: rgba(0, 200, 0,1);
+    }
+    .username{
+        font-style: italic;
+        font-size: 80%;
+        user-select: none;
+        cursor: pointer;
     }
 }

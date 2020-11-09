@@ -11,10 +11,35 @@
     .content-container{
         width:80%;
     }
+    .ticket-container{
+        width:80%;
+
+    }
+    .user-container{
+        width:80%;
+    }
+    #add-ticket-btn{
+        width:80%;
+    }
+    #add-user-btn{
+        width:80%;
+    }
 }
 
 @media screen and(max-width: 480px){
     .content-container{
+        width:100%;
+    }
+    .ticket-container{
+        width:100%;
+    }
+    .user-container{
+        width:100%;
+    }
+    #add-ticket-btn{
+        width:100%;
+    }
+    #add-user-btn{
         width:100%;
     }
 }
