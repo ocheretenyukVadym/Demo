@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
+import AssignToUserSelect from './AssignToUserSelect';
 import './Ticket.scss';
 
 const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, userNames, deleteTicket, restore, getUsername}) => {
 
     const [isViewChanges, setIsViewChanges] = useState(false);
     const [inputValue, setInputValue] = useState(ticket.title);
-
     let date = new Date(ticket.createdAt);
 
     function convertDate(date) {
@@ -37,7 +37,7 @@ const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, userNames, del
                     <p>{ticket.title}</p>
                     <p>{convertDate(date)}</p>
 
-                    <div className="username">{getUserName()}</div>
+                    {isTicketPage && <div className="username">{getUserName()}</div>}
                     {isTicketPage && <span className="delete-btn" onClick={clickUpdateTicket}>🖊️</span>}
 
 
@@ -49,6 +49,7 @@ const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, userNames, del
                 :
                 <div className="ticket-container">
                     <input className="update-input" value={inputValue} onChange={e => handlerChange(e)}/>
+                    <AssignToUserSelect ticketId={ticket.id}/>
                     <button className="save-btn" onClick={saveTicket}>save</button>
                 </div>
             }
