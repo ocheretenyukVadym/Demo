@@ -32,12 +32,12 @@ const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, deleteTicket, 
                 <div className="ticket-container">
                         <p>{ticket.title}</p>
                         <p>{converDate(date)}</p>
-                        {isTicketPage &&
-                            <img className='update-pen' onClick={clickUpdateTicket} src='https://cdn.iconscout.com/icon/free/png-512/pencil-60-119100.png' />
-                        }
+
+                        {isTicketPage && <span className="delete-btn" onClick={clickUpdateTicket}>🖊️</span>}
+
                         {isTicketPage ?
-                            <button className="delete-btn" onClick={moveToRecycleBin}><img src="https://lh3.googleusercontent.com/proxy/OF10tCa-I2uSxpXBRaoL6-ByM0np0a3WtP0dvqujpqouhJCt3mkidH76eZ035yNPRAfSUgZcYmWApW0W7RIUMTwJ4wy3BzaJmr-095CHcHjrM1NPDnj3xZoyUSNQxRlyT9xf65RH"/></button> :
-                            <button className="delete-btn" onClick={moveToDeletedTickets}><img src="https://lh3.googleusercontent.com/proxy/OF10tCa-I2uSxpXBRaoL6-ByM0np0a3WtP0dvqujpqouhJCt3mkidH76eZ035yNPRAfSUgZcYmWApW0W7RIUMTwJ4wy3BzaJmr-095CHcHjrM1NPDnj3xZoyUSNQxRlyT9xf65RH"/></button>}
+                            <button className="delete-btn" onClick={moveToRecycleBin}>❌</button> :
+                            <button className="delete-btn" onClick={moveToDeletedTickets}>❌</button>}
                 </div>
                 </>
                 :
