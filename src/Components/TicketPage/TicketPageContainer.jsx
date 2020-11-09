@@ -19,6 +19,7 @@ const TicketPageContainer = (props) => {
                      deleteTicket={props.store.deleteTicket}
                      moveToTrash={props.store.moveToTrashTicket}
                      isTicketPage={true}
+                     userNames={props.store.userNames}
                      getUsername={props.store.getUsername}
                      updateTicket={props.store.updateTicket}/>
 
