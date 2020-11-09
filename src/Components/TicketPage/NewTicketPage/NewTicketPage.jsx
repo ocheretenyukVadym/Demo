@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-
 import './NewTicketPage.scss'
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './Modal/ShowModalTicket';
-
 
 const NewTicketPage = ({ createNewTicket }) => {
   const [input, setInput ,] = useState("");

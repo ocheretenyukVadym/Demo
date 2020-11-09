@@ -5,14 +5,20 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 60%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
   border: 1px solid black;
   padding: 5px;
   margin: 5px auto;
   border-radius: 10px;
   background-color: #fff;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+}
+
+.user-container .restore-button {
+  width: 25px;
+  cursor: pointer;
 }
 
 .user-container p {
@@ -20,6 +26,8 @@
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   margin: 0 0 0 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -36,8 +44,6 @@
   background-color: rgba(255, 0, 0, 0);
   border: 0;
   border-radius: 2px;
-  color: #fff;
-  cursor: pointer;
   outline: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -85,5 +91,6 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  cursor: pointer;
 }
 /*# sourceMappingURL=User.css.map */

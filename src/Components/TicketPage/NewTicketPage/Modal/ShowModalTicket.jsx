@@ -2,10 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyVerticallyCenteredModalTicket from './MyVerticallyCenteredModalTicket';
-import "./ShowModalTicket.scss"
-
-
-
+import './ShowModalTicket.scss'
 
   function App(props) {
     const [modalShow, setModalShow] = React.useState(false);
@@ -13,7 +10,7 @@ import "./ShowModalTicket.scss"
     return (
       <>
         <Button variant="primary" id="add-ticket-btn" onClick={() => setModalShow(true)}>
-            Add Tikcet
+            Add Ticket
         </Button>
   
         <MyVerticallyCenteredModalTicket
@@ -24,6 +21,5 @@ import "./ShowModalTicket.scss"
       </>
     );
   }
-
 
   export default App;

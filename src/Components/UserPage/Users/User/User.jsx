@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
 import AllTicketsByUser from './TicketsByUser/AllTicketsByUser';
-import './User.css';
+import './User.scss';
+import restoreImage from '../../../../Assets/restore.png'
 
 const User = ({user, updateUser, isUserPage, moveToTrash, deleteUser, restore}) => {
     const [isViewChanges, setIsViewChanges] = useState(false);
@@ -31,7 +32,9 @@ const User = ({user, updateUser, isUserPage, moveToTrash, deleteUser, restore}) 
                 <>
                 <div className="user-container">
                     {isUserPage ? "" :
-                        <div className="restore-button" onClick={restoreFromTrash}>restore</div>
+                        <img className="restore-button" onClick={restoreFromTrash}
+                        src = {restoreImage}
+                        />
                     }
                     {isUserPage && isPresentTickets() && <span onClick={showTicketslist}>🎫</span>}
                         <p className="user-name" onClick={showTicketslist}>

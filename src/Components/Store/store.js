@@ -45,7 +45,6 @@ export class Store{
             unassignFromUser: action,
             restoreTicketFromRecycleBin: action,
             moveToTrashTicket: action,
-            getUsername: action,
         })
     }
 
@@ -61,12 +60,14 @@ export class Store{
 
     setDeletedTickets = deletedTickets => this.deletedTickets = deletedTickets;
 
-    getUserNames(users){
-        users.forEach(user => {
+    getUserNames(){
+        let tmp = new Map()
+        this.users.forEach(user => {
             user.tickets.forEach(ticket => {
-                this.userNames.set(ticket.id, user.name)
+                tmp.set(ticket.id, user.name)
             })
         })
+        this.userNames = tmp;
     }
 
     getUsers = () => {
@@ -74,7 +75,7 @@ export class Store{
         userAPI.getUsers().then( data => {
             this.isFetching = true;
             data && this.setUsers(data);
-            data && this.getUserNames(data);
+            data && this.getUserNames();
         })
     }
 
@@ -128,17 +129,6 @@ export class Store{
             this.isFetching = true;
             this.getDeletedUsers();
             this.getUsers();
-        })
-    }
-
-    getUsername = ticketId => {
-        this.isFetching = false;
-        this.users.forEach(u => {
-            u.tickets.forEach(t => {
-                if (ticketId === t.id) {
-                    return u.name;
-                }
-            })
         })
     }
 
@@ -214,6 +204,7 @@ export class Store{
             this.isFetching = true;
             this.getTickets();
             this.getUsers();
+            this.getUserNames();
         })
     }
 
