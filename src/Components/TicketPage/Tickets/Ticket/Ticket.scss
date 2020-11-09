@@ -7,10 +7,10 @@
     margin: 5px auto;
     border-radius: 10px;
     background-color: #fff;
-    flex-wrap: wrap;
 
     p{
         flex: 1 1 auto;
+        flex-wrap: wrap;
         margin: 0 0 0 10px;
     }
 
@@ -23,7 +23,6 @@
             background-color: rgba(255,0,0,0);
             border: 0;
             border-radius: 2px;
-            color: #fff;
             cursor: pointer;
             outline: 0;
             display: flex;
