@@ -12,6 +12,8 @@ export class Store{
 
     newTicketValue = '';
 
+    userNames = new Map();
+
     constructor() {
         makeObservable(this, {
             users: observable,
@@ -20,6 +22,7 @@ export class Store{
             deletedTickets: observable,
             isFetching: observable,
             newTicketValue: observable,
+            userNames: observable,
             setUserValue: action,
             setTicketValue: action,
             setUsers: action,
@@ -42,6 +45,7 @@ export class Store{
             unassignFromUser: action,
             restoreTicketFromRecycleBin: action,
             moveToTrashTicket: action,
+            getUsername: action,
         })
     }
 
@@ -57,11 +61,20 @@ export class Store{
 
     setDeletedTickets = deletedTickets => this.deletedTickets = deletedTickets;
 
+    getUserNames(users){
+        users.forEach(user => {
+            user.tickets.forEach(ticket => {
+                this.userNames.set(ticket.id, user.name)
+            })
+        })
+    }
+
     getUsers = () => {
         this.isFetching = false;
         userAPI.getUsers().then( data => {
             this.isFetching = true;
             data && this.setUsers(data);
+            data && this.getUserNames(data);
         })
     }
 
@@ -118,6 +131,16 @@ export class Store{
         })
     }
 
+    getUsername = ticketId => {
+        this.isFetching = false;
+        this.users.forEach(u => {
+            u.tickets.forEach(t => {
+                if (ticketId === t.id) {
+                    return u.name;
+                }
+            })
+        })
+    }
 
     getTickets = () => {
         this.isFetching = false;
@@ -180,8 +203,8 @@ export class Store{
         this.isFetching = false;
         ticketAPI.assignToUser(userId,ticketId).then( data => {
             this.isFetching = true;
-            data && this.getTickets();
-            data && this.getUsers();
+            this.getTickets();
+            this.getUsers();
         })
     }
 
@@ -193,6 +216,7 @@ export class Store{
             this.getUsers();
         })
     }
+
 }
 
 
