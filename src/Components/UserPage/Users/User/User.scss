@@ -1,7 +1,8 @@
 .user-container{
     display: flex;
     justify-content: space-between;
-    width: 60%;
+    align-items: center;
+    width: 80%;
     border: 1px solid black;
     padding: 5px;
     margin: 5px auto;
@@ -28,7 +29,6 @@
             background-color: rgba(255,0,0,0);
             border: 0;
             border-radius: 2px;
-            cursor: pointer;
             outline: 0;
             display: flex;
             align-items: center;
@@ -64,5 +64,6 @@
 
     span{
         user-select: none;
+        cursor: pointer;
     }
 }

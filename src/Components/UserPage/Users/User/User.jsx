@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import AllTicketsByUser from './TicketsByUser/AllTicketsByUser';
-import './User.css';
+import './User.scss';
 import restoreImage from '../../../../Assets/restore.png'
 
 const User = ({user, updateUser, isUserPage, moveToTrash, deleteUser, restore}) => {
