@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import MyVerticallyCenteredModal from './MyVerticallyCenteredModal';
 import './ShowModal.scss'
 
-
   function App(props) {
     const [modalShow, setModalShow] = React.useState(false);
   
@@ -22,6 +21,5 @@ import './ShowModal.scss'
       </>
     );
   }
-
 
   export default App;
