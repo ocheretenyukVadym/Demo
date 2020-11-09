@@ -1,7 +1,8 @@
 .ticket-container{
     display: flex;
     justify-content: space-between;
-    width: 60%;
+    align-items: center;
+    width: 80%;
     border: 1px solid black;
     padding: 5px;
     margin: 5px auto;
@@ -13,9 +14,14 @@
         cursor: pointer;
     }
     p{
-        flex: 1 1 auto;
+        position: relative;
+        flex: 1 1 25%;
         flex-wrap: wrap;
         margin: 0 0 0 10px;
+        overflow: hidden;
+    }
+    #atDate{
+        font-size: 80%;
     }
 
         .update-pen{
@@ -63,8 +69,9 @@
     }
     .username{
         font-style: italic;
-        font-size: 80%;
+        font-size: 20px;
         user-select: none;
         cursor: pointer;
+        text-align: center;
     }
 }

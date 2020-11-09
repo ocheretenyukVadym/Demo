@@ -34,9 +34,9 @@ const Ticket = ({ticket, updateTicket, isTicketPage, moveToTrash, userNames, del
                         />
                     }
                     <p>{ticket.title}</p>
-                    <p>{convertDate(date)}</p>
+                    <p id="atDate">{convertDate(date)}</p>
 
-                    <div className="username">{getUserName()}</div>
+                    <p className="username">{getUserName()}</p>
                     {isTicketPage && <span className="delete-btn" onClick={clickUpdateTicket}>🖊️</span>}
 
 
