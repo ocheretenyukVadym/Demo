@@ -15,6 +15,11 @@
       flex-wrap: wrap;
 }
 
+.user-container .restore-button {
+  width: 25px;
+  cursor: pointer;
+}
+
 .user-container p {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
