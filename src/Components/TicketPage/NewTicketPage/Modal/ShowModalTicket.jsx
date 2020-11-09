@@ -4,16 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import MyVerticallyCenteredModalTicket from './MyVerticallyCenteredModalTicket';
 import './ShowModalTicket.scss'
 
-
-
-
   function App(props) {
     const [modalShow, setModalShow] = React.useState(false);
   
     return (
       <>
         <Button variant="primary" id="add-ticket-btn" onClick={() => setModalShow(true)}>
-            Add Tikcet
+            Add Ticket
         </Button>
   
         <MyVerticallyCenteredModalTicket
@@ -24,6 +21,5 @@ import './ShowModalTicket.scss'
       </>
     );
   }
-
 
   export default App;

@@ -4,7 +4,7 @@ import './Tickets.scss';
 
 const Tickets = (props) => {
     return (
-        <div className="container">
+        <div>
             {
                 props.tickets.map(ticket => {
                     return (

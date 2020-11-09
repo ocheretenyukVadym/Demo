@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
-import './NewUserPage.css'
+import './NewUserPage.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './Modal/ShowModal';
-
-
 
 const NewUserPage = ({ createNewUser }) => {
     const [name, setName] = useState("");

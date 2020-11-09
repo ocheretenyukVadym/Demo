@@ -1,7 +1,6 @@
 import {inject, observer} from 'mobx-react';
 import React, {useEffect} from 'react';
 import NewTicketPage from './NewTicketPage/NewTicketPage';
-import './TicketPageContainer.scss';
 import Tickets from './Tickets/Tickets';
 
 const TicketPageContainer = (props) => {
@@ -12,10 +11,10 @@ const TicketPageContainer = (props) => {
     }, []);
 
      return props.store.users ? (
-        <div>
-            {<NewTicketPage
+        <div className="container">
+            <NewTicketPage
                 createNewTicket={props.store.createNewTicket}
-            />}
+            />
             <Tickets tickets={props.store.tickets}
                      deleteTicket={props.store.deleteTicket}
                      moveToTrash={props.store.moveToTrashTicket}
