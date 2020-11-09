@@ -36,6 +36,7 @@
         .pages li a{
             margin: 0px 5px;
         }
+        
         .recycle-bin{
             flex: 0 0 auto;
             margin: 0;
@@ -48,5 +49,9 @@
         width:100%;
         margin: 0;
         padding: 0;
+        .navb-light .recycle-bin{
+            flex: 1 1 auto;
+        }
     }
+    
 }

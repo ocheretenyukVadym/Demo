@@ -30,6 +30,7 @@
       flex-wrap: wrap;
   margin: 0 0 0 10px;
   overflow: hidden;
+  word-wrap: break-word;
 }
 
 .ticket-container #atDate {
@@ -98,5 +99,9 @@
           user-select: none;
   cursor: pointer;
   text-align: center;
+}
+
+.ticket-container .assign-user-container {
+  width: 40%;
 }
 /*# sourceMappingURL=Ticket.css.map */

@@ -17,44 +17,11 @@ const AssignToUserSelect = ({ store, ticketId }) => {
     })()
 
     return (
-        <div style={{display: 'flex'}}>
+        <div className="assign-user-container">
             <Select isLoading={!store.isFetching} options={options} onChange={ user => 
-                    assignToUser(user.value)} styles={customStyles}  width='200px'/>
+                    assignToUser(user.value)} className="assign-user"/>
         </div>
     )
 }
 
 export default inject("store")(observer(AssignToUserSelect))
-
-const customStyles = {
-    menu: (provided, state) => ({
-      ...provided,
-      width: state.selectProps.width,
-      borderBottom: '1px dotted pink',
-      color: state.selectProps.menuColor,
-      padding: 20,
-    }),
-
-    loadingIndicator: () => ({
-        display:'flex',
-        alignItems: 'center',
-        width: '50%',
-        height: '44%',
-        span: {
-            height: '50%',
-        }
-    }),
-  
-    control: (_, { selectProps: { width }}) => ({
-      width: width,
-      display: 'flex',
-      border: '1px solid #dbdbdb',
-      
-    }),
-  
-    singleValue: (provided, state) => {
-      const opacity = state.isDisabled ? 0.5 : 1;
-      const transition = 'opacity 300ms';
-      return { ...provided, opacity, transition };
-    }
-  }
