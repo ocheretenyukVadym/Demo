@@ -2,6 +2,7 @@ import React from 'react';
 import User from './User/User';
 import './Users.scss';
 
+
 const Users = (props) => {
     return (
         <div>
