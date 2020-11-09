@@ -44,6 +44,10 @@ export const userAPI = {
         return instance.post(`users/restore/${id}`,{})
             .then(response => {
                 return response.data});},
+    getUserByTicketId(ticketId) {
+        return instance.get(`users/byTicketId/${ticketId}`)
+            .then(responce => {
+                return responce.data});},
 }
 
 export const ticketAPI = {

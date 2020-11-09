@@ -42,6 +42,7 @@ export class Store{
             unassignFromUser: action,
             restoreTicketFromRecycleBin: action,
             moveToTrashTicket: action,
+            getUsername: action,
         })
     }
 
@@ -118,6 +119,16 @@ export class Store{
         })
     }
 
+    getUsername = ticketId => {
+        this.isFetching = false;
+        this.users.forEach(u => {
+            u.tickets.forEach(t => {
+                if (ticketId === t.id) {
+                    return u.name;
+                }
+            })
+        })
+    }
 
     getTickets = () => {
         this.isFetching = false;
@@ -180,8 +191,8 @@ export class Store{
         this.isFetching = false;
         ticketAPI.assignToUser(userId,ticketId).then( data => {
             this.isFetching = true;
-            data && this.getTickets();
-            data && this.getUsers();
+            this.getTickets();
+            this.getUsers();
         })
     }
 
@@ -193,6 +204,7 @@ export class Store{
             this.getUsers();
         })
     }
+
 }
 
 
